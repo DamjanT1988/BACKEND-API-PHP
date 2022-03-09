@@ -28,7 +28,7 @@ foreach($postlist as $key=>$pl) {
     echo "<h3>" . $pl['title'] . "</h3>";
     echo $pl['postdate'] . "<br><br>";
     echo $pl['content'] . "<br>";
-    echo "<br><a href='news.php?deleteid=" . $pl['id'] . "'>LÄS MER</a>" . "<br><br><hr><br>";
+    echo "<br><a href='news.php?deleteid=" . $pl['id'] . "'>LÄS MER</a>" . "<br><br><hr class='current'><br>";
 }
 ?>
 </div>

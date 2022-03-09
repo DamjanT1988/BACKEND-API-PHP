@@ -25,6 +25,8 @@ if(isset($_POST['name'])) {
     $name = $_POST['name'];
     $password = $_POST['password'];
 
+
+    
     if($user->checkUser($name, $password)) {
         echo "Välkommen!";
         $_SESSION['inlogg'] = ""; 

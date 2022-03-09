@@ -7,6 +7,8 @@ if(isset($_POST['title'])) {
 $title = $_POST['title'];
 $content = $_POST['content'];
 
+
+
 if($addContent->addPost($title, $content)) {
     $_SESSION['lagring'] = "Inlägg tillagd!";
     header("location: admin.php");

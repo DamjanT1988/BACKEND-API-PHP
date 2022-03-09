@@ -49,13 +49,18 @@ class Content {
 */
     //add new customer
     function addPost(string $title, string $content) {
-        //control content for sql inj & real email
         if(!$this->setTitle($title)) {
             return false;
         }
         if(!$this->setContent($content)) {
             return false;
         }
+
+            //control SQL-injections
+            $title = $db->real_escape_string($title);
+            $content = $db->real_escape_string($content);
+        
+
         $sqlquery = "INSERT INTO news (title, content) VALUES('" . $this->title . "', '" . $this->content . "');";
         //send query to db, save the response
         $result = $this->db->query($sqlquery);
