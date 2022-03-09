@@ -8,6 +8,7 @@ class Content {
     private $title;
     private $content;
     private $user;
+    private $name;
 
     //constructor to load at once
     function __construct() {
@@ -130,6 +131,14 @@ class Content {
         }
     }
 
+    function setName (string $name) {
+        $this->name = $name;
+        return true;
+    } 
+
+    function getName () {
+        return $this->name;
+    }
 
 
 }

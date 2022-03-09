@@ -69,20 +69,40 @@ if(isset($_SESSION['errorlagring'])) {
 <input type="submit" class="button1" value="Lägg in artikel">
 </form>
 <br><br>
-<h2>Dina befintliga inlägg</h2>
+
+<h2>Dina egna befintliga blogginlägg</h2>
 <?php
 
 $getpost = new Content();
 
 $postlist = $getpost->getPost();
 
+if(isset($_POST['name'])) {
+$getpost->setName($_POST['name']);
+}
+
+$name = $getpost->getName();
+
 foreach($postlist as $key=>$pl) {
+    if($pl['user'] == $name && $name != "") {
     echo "<h3>" . $pl['title'] . "</h3>";
     echo $pl['postdate'] . "<br><br>";
     echo $pl['content'] . "<br>";
     echo $pl['user'] . "<br>";
     echo "<br><a href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . "<br><br><hr>";
 }
+
+}
+
+foreach($postlist as $key=>$pl) {
+if($pl['user'] == $_SESSION['Namn']){
+    echo "<h3>" . $pl['title'] . "</h3>";
+    echo $pl['postdate'] . "<br><br>";
+    echo $pl['content'] . "<br>";
+    echo $pl['user'] . "<br>";
+    echo "<br><a href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . "<br><br><hr>";
+}}
+
 ?>
 
 <?php

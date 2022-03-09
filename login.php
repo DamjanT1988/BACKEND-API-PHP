@@ -7,15 +7,15 @@ include("includes/header.php");
 
 <!--create table-->
 <form action="admin.php" method="POST">
-<label for="name">E-mejl:</label>
+<label for="name">Ditt förnamn:</label>
 <br>
 <input type="text" name="name" id="name">
 <br>
-<label for="password">Lösenord:</label>
+<label for="password">Din lösenord:</label>
 <br>
 <input type="password" name="password" id="password">
 <br><br>
-<input type="submit" class="button1" value="Skapa användare!">
+<input type="submit" class="button1" value="Logga in!">
 <br>
 </form>
 <br>

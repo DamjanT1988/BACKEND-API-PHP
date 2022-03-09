@@ -25,7 +25,7 @@ include("includes/header.php");
 <input type="employeeno" name="employeeno" id="employeeno">
 
 <br>
-<input type="submit" class="button1" value="Logga in">
+<input type="submit" class="button1" value="Registrera användarkonto">
 <br>
 </form>
 
