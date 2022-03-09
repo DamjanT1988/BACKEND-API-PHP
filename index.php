@@ -30,6 +30,7 @@ foreach(array_slice($postlist, 0, 5) as $key=>$pl) {
     echo "<h3>" . $pl['title'] . "</h3>";
     echo $pl['postdate'] . "<br><br>";
     echo $pl['content'] . "<br>";
+    echo $pl['user'] . "<br>";
     echo "<br><a class='button1' href='index.php?deleteid=" . $pl['id'] . "'>LÄS MER</a>" . "<br><br><hr class='current'>";
 }
 ?>

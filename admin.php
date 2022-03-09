@@ -5,8 +5,6 @@ include("includes/header.php");
 
 $post = new Content();
 
-echo "<div><a href='logout.php' id='logout'>Logga ut</a></div>";
-
 if(isset($_GET['deleteid'])) {
     $id = $_GET['deleteid'];
     echo $id;
@@ -28,7 +26,7 @@ if(isset($_POST['name'])) {
 
 
     if($user->checkUser($name, $password)) {
-        echo "Välkommen!";
+        echo "<h3>Välkommen " . $name . "!</h3>";
         $_SESSION['inlogg'] = ""; 
     } else {
        $_SESSION['errorinlogg'] = "Fel inloggningsuppgifter";
@@ -44,7 +42,8 @@ if(!isset($_SESSION['inlogg'])) {
 
 
 ?>
-
+<br>
+<div><a class='button1' href='logout.php' id='logout'>Logga ut</a></div>
 <h2>Administrera hemsidan nedan!</h2>
 <?php
 if(isset($_SESSION['lagring'])) {
@@ -65,10 +64,12 @@ if(isset($_SESSION['errorlagring'])) {
 <br>
 <textarea form="content" name="content" id="content2" rows="10" cols="70"></textarea>
 <br>
+<input type="hidden" name="user" id="user" value="<?= $name; ?>">
+<br>
 <input type="submit" class="button1" value="Lägg in artikel">
 </form>
-
-<h2>Befintliga nyheter</h2>
+<br><br>
+<h2>Dina befintliga inlägg</h2>
 <?php
 
 $getpost = new Content();
@@ -79,6 +80,7 @@ foreach($postlist as $key=>$pl) {
     echo "<h3>" . $pl['title'] . "</h3>";
     echo $pl['postdate'] . "<br><br>";
     echo $pl['content'] . "<br>";
+    echo $pl['user'] . "<br>";
     echo "<br><a href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . "<br><br><hr>";
 }
 ?>

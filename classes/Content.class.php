@@ -7,6 +7,7 @@ class Content {
     private $db;
     private $title;
     private $content;
+    private $user;
 
     //constructor to load at once
     function __construct() {
@@ -48,20 +49,23 @@ class Content {
     }
 */
     //add new customer
-    function addPost(string $title, string $content) {
+    function addPost(string $title, string $content, string $user) {
         if(!$this->setTitle($title)) {
             return false;
         }
         if(!$this->setContent($content)) {
             return false;
         }
+        if(!$this->setUser($user)) {
+            return false;
+        }
 
             //control SQL-injections
-            $title = $db->real_escape_string($title);
-            $content = $db->real_escape_string($content);
+//            $title = $db->real_escape_string($title);
+ //           $content = $db->real_escape_string($content);
         
 
-        $sqlquery = "INSERT INTO news (title, content) VALUES('" . $this->title . "', '" . $this->content . "');";
+        $sqlquery = "INSERT INTO news (title, content, user) VALUES('" . $this->title . "', '" . $this->content . "', '" . $this->user . "');";
         //send query to db, save the response
         $result = $this->db->query($sqlquery);
         return true;
@@ -107,10 +111,19 @@ class Content {
         }
     }
 
-    //set an email
+    //set an content
     function setContent (string $content) {
         if($content != ""){
             $this->content = $content;
+            return true;
+        } else {
+            return false;
+        }
+    }
+    //set an content
+    function setUser (string $user) {
+        if($user != ""){
+            $this->user = $user;
             return true;
         } else {
             return false;
