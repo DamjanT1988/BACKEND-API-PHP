@@ -3,7 +3,7 @@ $page_title = "Startsida";
 include("includes/header.php");
 ?>
 
-<h2>Alla nyhetsartiklar!</h2>
+<h2>Alla bloggartiklar!</h2>
 
 <div class="postmain">
 <?php
@@ -28,7 +28,7 @@ foreach($postlist as $key=>$pl) {
     echo "<h3>" . $pl['title'] . "</h3>";
     echo $pl['postdate'] . "<br><br>";
     echo $pl['content'] . "<br>";
-    echo "<br><a href='news.php?deleteid=" . $pl['id'] . "'>LÄS MER</a>" . "<br><br><hr class='current'><br>";
+    echo "<br><a class='button1' href='news.php?deleteid=" . $pl['id'] . "'>LÄS MER</a>" . "<br><br><hr class='current'><br>";
 }
 ?>
 </div>

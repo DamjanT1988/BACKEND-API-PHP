@@ -19,14 +19,14 @@ if(isset($_GET['deleteid'])) {
 
 <?php
 
-$user = new Users();
+$user = new Admin();
 
 if(isset($_POST['name'])) {
     $name = $_POST['name'];
     $password = $_POST['password'];
 
 
-    
+
     if($user->checkUser($name, $password)) {
         echo "Välkommen!";
         $_SESSION['inlogg'] = ""; 

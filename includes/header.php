@@ -17,8 +17,9 @@ include("config.php");
             <img src="logotyp.jpg" alt="logotyp">
     </div>
     <div class="nav">
-    <a class="menynamn" href="index.php" class="menu">START</a>
-    <a class="menynamn" href="news.php" class="menu">NYHETER</a>
-    <a class="menynamn" href="about.php" class="menu">OM OSS</a>
+    <a class="menynamn" href="index.php">START</a>
+    <a class="menynamn" href="news.php">NYHETER</a>
+    <a class="menynamn" href="about.php">OM OSS</a>
+    <a class="menynamn" href="login.php">LOGGA IN</a>
 </div>
             <hr>

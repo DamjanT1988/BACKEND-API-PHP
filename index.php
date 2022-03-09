@@ -26,30 +26,15 @@ if(isset($_GET['deleteid'])) {
 $postlist = $getpost->getPost();
 
 //fetch the latest id with post by time
-foreach(array_slice($postlist, 0, 1) as $key=>$pl) {
+foreach(array_slice($postlist, 0, 5) as $key=>$pl) {
     echo "<h3>" . $pl['title'] . "</h3>";
     echo $pl['postdate'] . "<br><br>";
     echo $pl['content'] . "<br>";
-    echo "<br><a href='index.php?deleteid=" . $pl['id'] . "'>LÄS MER</a>" . "<br><br><hr class='current'>";
+    echo "<br><a class='button1' href='index.php?deleteid=" . $pl['id'] . "'>LÄS MER</a>" . "<br><br><hr class='current'>";
 }
 ?>
 </div>
 </article>
-<div class="postmain">
-<?php
-
-//save post info.
-$postlist = $getpost->getPost();
-
-//fetch the second latest id with post by time
-foreach(array_slice($postlist, 1, 1) as $key=>$pl) {
-    echo "<h3>" . $pl['title'] . "</h3>";
-    echo $pl['postdate'] . "<br><br>";
-    echo $pl['content'] . "<br>";
-    echo "<br><a href='index.php?deleteid=" . $pl['id'] . "'>LÄS MER</a>" . "<br><br><hr class='current'>";
-}
-?>
-</div>
 
 
 <?php

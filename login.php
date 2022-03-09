@@ -3,7 +3,7 @@ $page_title = "Logga in";
 include("includes/header.php");
 ?>
 
-<h2>Logga in nedan för att administrera!</h2>
+<h2>Logga in nedan!</h2>
 
 <!--create table-->
 <form action="admin.php" method="POST">

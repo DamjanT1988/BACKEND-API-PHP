@@ -1,5 +1,6 @@
 body {
     background-color: #666;
+    font-family: Arial, sans-serif;
 }
 
 img {
@@ -9,6 +10,12 @@ img {
 
 #check {
     transform: scale(1.75);
+}
+
+#textner {
+    text-align: center;
+    position: relative;
+    font-size: 0.95em;
 }
 
 /*HUVUDNAVIGATION*/
@@ -39,27 +46,27 @@ img {
 }
 
 div.postmain {
-        width: 750px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
+    width: 750px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-     a {
-        color: white;
-    }
-    
-    a.topptextlink {
-        color:black;
-    }
-    
-    a.link1 {
-        color: black;
-    }
-    
-    a.menynamn {
-        color: white;
-    }
+a {
+    color: white;
+}
+
+a.topptextlink {
+    color: black;
+}
+
+a.link1 {
+    color: black;
+}
+
+a.menynamn {
+    color: white;
+}
 
 #head {
     display: inline-block;
@@ -117,6 +124,8 @@ form {
     font-size: 1em;
     background-color: red;
     color: white;
+    padding: 1%;
+    text-decoration: none;
 }
 
 a {
@@ -163,8 +172,7 @@ p {
 }
 
 /*MEDIA QUERY FÖR SURFPLATTA*/
-@media only screen and (min-width: 551px) and (max-width: 860px) {
-}
+@media only screen and (min-width: 551px) and (max-width: 860px) {}
 
 /*MEDIA QUERY FÖR MOBILTELEFON*/
 @media only screen and (max-width: 550px) and (orientation: portrait) {
@@ -184,21 +192,22 @@ p {
     h1 {
         font-size: 2em;
     }
-    
+
     h2 {
         font-size: 1.5em;
     }
-    
+
     h3 {
         font-size: 1.5em;
         line-height: 1.25em;
     }
-    
-    
+
+
     p {
         font-size: 1.35em;
         line-height: 1.35em;
     }
+
     #mainfooter {
         display: inline-block;
         width: 100%;
@@ -212,4 +221,3 @@ p {
     }
 
 }
-
