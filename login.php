@@ -7,17 +7,20 @@ include("includes/header.php");
 
 <!--create table-->
 <form action="admin.php" method="POST">
-<label for="name">Användarnamn:</label>
+<label for="name">E-mejl:</label>
 <br>
 <input type="text" name="name" id="name">
 <br>
 <label for="password">Lösenord:</label>
 <br>
 <input type="password" name="password" id="password">
-<br>
-<input type="submit" class="button1" value="Logga in">
+<br><br>
+<input type="submit" class="button1" value="Skapa användare!">
 <br>
 </form>
+<br>
+<br>
+<div><a class='button1' href='register.php' id='logout'>Registrera ny användare >></a></div>
 
 <?php
 //error if wrong login info.

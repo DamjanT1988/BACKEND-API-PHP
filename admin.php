@@ -17,7 +17,7 @@ if(isset($_GET['deleteid'])) {
 
 <?php
 
-$user = new Admin();
+$user = new User();
 
 if(isset($_POST['name'])) {
     $name = $_POST['name'];
