@@ -132,13 +132,13 @@ class Content {
         }
     }
 
-    function setName (string $name) {
-        $this->name = $name;
+    function setUsername (string $user) {
+        $this->user = $user;
         return true;
     } 
 
-    function getName () {
-        return $this->name;
+    function getUsername () {
+        return $this->user;
     }
 
 
