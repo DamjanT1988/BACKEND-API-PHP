@@ -27,7 +27,7 @@ if(isset($_POST['name'])) {
     $cookieName = "Bert";
     $cookieValue = $name;
     setcookie($cookieName, $cookieValue, time() + (6000));
-
+    $_COOKIE['Bert'] = $_POST['name'];
 
     if($user->checkUser($name, $password)) {
         echo "<h3>Välkommen " . $name . "!</h3>";
@@ -81,10 +81,6 @@ $getpost = new Content();
 
 $postlist = $getpost->getPost();
 
-if(isset($_POST['name'])) {
-$getpost->setName($_POST['name']);
-$_COOKIE['Name'] = $_POST['name'];
-}
 
 foreach($postlist as $key=>$pl) {
     if($pl['user'] == $_COOKIE['Bert']){
@@ -94,8 +90,6 @@ foreach($postlist as $key=>$pl) {
     echo "Skrivet av: " . $pl['user'] . "<br>";
     echo "<br><a class='button1' href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . "<br><br><hr>";
 }}
-
-//header("location: store.php");
 
 ?>
 
