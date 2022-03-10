@@ -2,8 +2,6 @@
 $page_title = "Administrera";
 include("includes/header.php");
 
-
-
 $post = new Content();
 
 if(isset($_GET['deleteid'])) {
@@ -22,6 +20,8 @@ $user = new User();
 
 if(isset($_POST['name'])) {
     $name = $_POST['name'];
+    $name = htmlentities($name, ENT_QUOTES, 'UTF-8');
+    $name = strip_tags($name);
     $password = $_POST['password'];
 
     $cookieName = "Bert";
@@ -70,7 +70,7 @@ if(isset($_SESSION['errorlagring'])) {
 <br>
 <input type="hidden" name="user" id="user" value="<?= $name; ?>">
 <br>
-<input type="submit" class="button1" value="Lägg in artikel">
+<input type="submit" class="button1" value="Lägg in inlägg">
 </form>
 <br><br>
 
@@ -86,19 +86,6 @@ $getpost->setName($_POST['name']);
 $_COOKIE['Name'] = $_POST['name'];
 }
 
-$name = $getpost->getName();
-
-
-/*
-foreach($postlist as $key=>$pl) {
-    if($pl['user'] == $name && $name != "") {
-    echo "<h3>" . $pl['title'] . "</h3>";
-    echo $pl['postdate'] . "<br><br>";
-    echo $pl['content'] . "<br><br>";
-    echo "Skrivet av: " . $pl['user'] . "<br>";
-    echo "<br><a class='button1' href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . "<br><br><hr>";
-}}*/
-
 foreach($postlist as $key=>$pl) {
     if($pl['user'] == $_COOKIE['Bert']){
     echo "<h3>" . $pl['title'] . "</h3>";
@@ -107,6 +94,8 @@ foreach($postlist as $key=>$pl) {
     echo "Skrivet av: " . $pl['user'] . "<br>";
     echo "<br><a class='button1' href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . "<br><br><hr>";
 }}
+
+//header("location: store.php");
 
 ?>
 

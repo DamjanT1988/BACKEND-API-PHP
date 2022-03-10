@@ -51,6 +51,11 @@ class Content {
 */
     //add new customer
     function addPost(string $title, string $content, string $user) {
+            //control SQL-injections
+            $title = $this->db->real_escape_string($title);
+            $content = $this->db->real_escape_string($content);
+            $user = $this->db->real_escape_string($user);
+    
         if(!$this->setTitle($title)) {
             return false;
         }
@@ -61,10 +66,6 @@ class Content {
             return false;
         }
 
-            //control SQL-injections
-//            $title = $db->real_escape_string($title);
- //           $content = $db->real_escape_string($content);
-        
 
         $sqlquery = "INSERT INTO news (title, content, user) VALUES('" . $this->title . "', '" . $this->content . "', '" . $this->user . "');";
         //send query to db, save the response
