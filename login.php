@@ -21,8 +21,9 @@ include("includes/header.php");
 <br>
 <br>
 <div><a class='button1' href='register.php' id='logout'>Registrera ny användare >></a></div>
-
+<br><br>
 <?php
+
 //error if wrong login info.
 if(isset($_SESSION['errorinlogg'])) {
     echo $_SESSION['errorinlogg'];

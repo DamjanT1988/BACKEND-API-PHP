@@ -3,6 +3,7 @@ $page_title = "Administrera";
 include("includes/header.php");
 
 
+
 $post = new Content();
 
 if(isset($_GET['deleteid'])) {
@@ -23,6 +24,9 @@ if(isset($_POST['name'])) {
     $name = $_POST['name'];
     $password = $_POST['password'];
 
+    $cookieName = "Bert";
+    $cookieValue = $name;
+    setcookie($cookieName, $cookieValue, time() + (6000));
 
 
     if($user->checkUser($name, $password)) {
@@ -79,28 +83,29 @@ $postlist = $getpost->getPost();
 
 if(isset($_POST['name'])) {
 $getpost->setName($_POST['name']);
+$_COOKIE['Name'] = $_POST['name'];
 }
 
 $name = $getpost->getName();
 
+
+/*
 foreach($postlist as $key=>$pl) {
     if($pl['user'] == $name && $name != "") {
     echo "<h3>" . $pl['title'] . "</h3>";
     echo $pl['postdate'] . "<br><br>";
-    echo $pl['content'] . "<br>";
-    echo $pl['user'] . "<br>";
-    echo "<br><a href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . "<br><br><hr>";
-}
-
-}
+    echo $pl['content'] . "<br><br>";
+    echo "Skrivet av: " . $pl['user'] . "<br>";
+    echo "<br><a class='button1' href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . "<br><br><hr>";
+}}*/
 
 foreach($postlist as $key=>$pl) {
-if($pl['user'] == $_SESSION['Namn']){
+    if($pl['user'] == $_COOKIE['Bert']){
     echo "<h3>" . $pl['title'] . "</h3>";
     echo $pl['postdate'] . "<br><br>";
-    echo $pl['content'] . "<br>";
-    echo $pl['user'] . "<br>";
-    echo "<br><a href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . "<br><br><hr>";
+    echo $pl['content'] . "<br><br>";
+    echo "Skrivet av: " . $pl['user'] . "<br>";
+    echo "<br><a class='button1' href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . "<br><br><hr>";
 }}
 
 ?>

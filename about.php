@@ -7,29 +7,32 @@ include("includes/header.php");
 
 <h2>Om företaget</h2>
 
-Företaget grundades 1999 och har sedan dess växt till att bli Sveriges största webbplats om datorer och hårdvara. Med mer än 200 000 registrerade medlemmar besöks företaget av en bred grupp teknikentusiaster som inte bara tar del av dagliga nyheter, artiklar och recensioner utan också utbyter åsikter och idéer i ett av landets största diskussionsforum.
-Redaktionen
-<br><br>
-Vi tar personlig integritet på största allvar och följer dataskyddsförordningen GDPR. I användaravtalet förklarar vi hur registrerade medlemmars personuppgifter lagras, hanteras och på vilken laglig grund hanteringen sker. Uppgifterna hanteras enbart av godkända administratörer som arbetar på direkt uppdrag av Geeks AB.
-<br><br>
-Företaget är alltid på jakt efter duktiga medarbetare. Har du ett genuint intresse för datorer, datorkomponenter och nya prylar? Tveka inte att kontakta oss. Ersättning per publicerad artikel.
-RSS
-<br><br>
-Med RSS kan du enkelt följa SweClockers:s innehåll. RSS-flöden finns bland annat för följande avdelningar:
-<br><br>
-    Nyheter<br>
-    Galleri<br>
-    Marknad<br>
-    Forum<br>
-
-<h2>Företagsinformation</h2>
-
-Företaget är en del av Geeks. Geeks bygger stammar för människor med starka intressen och drivs av idén att ta de galet insatta på allvar.
-<br>
-Geeks AB<br>
-Orgnr: 556672-0131<br>
-Gumshornsgatan 7<br>
-114 60 Stockholm <br>
+ Att må bra på insidan har aldrig varit viktigare. Vi människor
+                        lever generellt längre, och vi är noggrannare med vad vi äter
+                        och hur vi rör oss. Att vi människor lever längre är för att vi har
+                        blivit mer och mer medvetna om vad våra kroppar behöver
+                        och hur dem fungerar.
+                        <br><br>
+                        Med rätt kost kommer man långt. Att äta bra kvalitétsmat är
+                        väldigt viktigt,men ibland kan det behövas lite extra hjälp på
+                        traven när det kommer till att få i sig all näring som man behöver.
+                        Även om man äter hälsosam och bra mat, är det svårt att få i
+                        sig exakt alla ämnen man behöver.
+                        <br><br>
+                        Vi på Nordic Supplements har lång erfarenhet när det kommer
+                        till hälsokost, och vi hjälper dig med att leva ett hälsosamt liv!
+                        Hälsoprodukter
+                        <br><br>
+                        Vår hälsa är otroligt viktig, både fysiskt och mentalt. Att få i sig
+                        rätt vitaminer, mineraler, antioxidanter mm är avgörande för att
+                        vi ska få vardagen att flyta på. Att hinna med alla dagens
+                        aktiviteter som inkludrar möten på jobb, hämta barn, träna osv
+                        kräver att kroppen har rätt bränsle och rätt förutsättningar.
+                        <br><br>
+                        Med rätt vitaminer och tillskott blir allt lättare, då kroppen får
+                        rätt förutsättningar! Vi på Nordic Supplements har lång erfarenhet av
+                        hälsoprodukter, och vi hjälper gärna dig med att välja rätt i vårt
+                        breda sortiment. 
 </article>
 
 <?php

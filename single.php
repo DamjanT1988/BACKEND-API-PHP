@@ -24,7 +24,8 @@ if(isset($_GET['deleteid'])) {
     foreach($idpost as $pl) {
         echo "<h2>" . $pl['title'] . "</h2>";
         echo $pl['postdate'] . "<br><br>";
-        echo $pl['content'] . "<br>";
+        echo $pl['content'] . "<br><br>";
+        echo "Skrivet av: " . $pl['user'] . "<br>";
         }
 }
 
