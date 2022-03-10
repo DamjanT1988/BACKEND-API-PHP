@@ -1,5 +1,5 @@
 <?php
-$site_title = "Damjans webbplats";
+$site_title = "Nordic Supplements";
 $divider = " | ";
 
 

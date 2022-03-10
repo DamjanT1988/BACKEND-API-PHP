@@ -41,6 +41,16 @@ function addUser(string $emailnew, string $passwordnew, string $fnamenew, string
 }
 
 
+function getUser() {
+    $sqlquery = "SELECT * FROM user ORDER BY id DESC";
+    //connect to db then send query, store the result
+    $result = $this->db->query($sqlquery);
+
+    //get all with ass. array
+    return mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
+
 function checkUser(string $name, string $password) : bool {
     $sqlquery = "SELECT * FROM user WHERE fname='$name' AND password='$password';";
     $result = $this->db->query($sqlquery);

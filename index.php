@@ -29,15 +29,28 @@ $postlist = $getpost->getPost();
 foreach(array_slice($postlist, 0, 5) as $key=>$pl) {
     echo "<h3>" . $pl['title'] . "</h3>";
     echo $pl['postdate'] . "<br><br>";
-    echo $pl['content'] . "<br>";
-    echo $pl['user'] . "<br>";
+    echo $pl['content'] . "<br><br>";
+    echo "Skrivet av: " . $pl['user'] . "<br>";
     echo "<br><a class='button1' href='index.php?deleteid=" . $pl['id'] . "'>LÄS MER</a>" . "<br><br><hr class='current'>";
 }
 ?>
 </div>
 </article>
+<h2>Här är alla skribenter på bloggen:</h2>
+<ul>
+ <?php
 
+$users = new User();
 
+$userlist = $users->getUser();
+
+//loop trough array
+foreach($userlist as $key=>$pl) {
+    echo "<p>" . $pl['fname'] . " " . $pl['lname'] . "</p>";
+}
+
+ ?>
+ </ul>
 <?php
 include("includes/footer.php");
 ?>

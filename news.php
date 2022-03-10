@@ -27,8 +27,8 @@ $postlist = $getpost->getPost();
 foreach($postlist as $key=>$pl) {
     echo "<h3>" . $pl['title'] . "</h3>";
     echo $pl['postdate'] . "<br><br>";
-    echo $pl['content'] . "<br>";
-    echo $pl['user'] . "<br>";
+    echo $pl['content'] . "<br><br>";
+    echo "Skrivet av: " . $pl['user'] . "<br>";
     echo "<br><a class='button1' href='news.php?deleteid=" . $pl['id'] . "'>LÄS MER</a>" . "<br><br><hr class='current'><br>";
 }
 ?>
