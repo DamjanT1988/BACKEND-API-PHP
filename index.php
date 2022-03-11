@@ -37,7 +37,7 @@ foreach(array_slice($postlist, 0, 5) as $key=>$pl) {
 </div>
 </article>
 <h2>Här är alla skribenter på bloggen:</h2>
-<ul>
+
  <?php
 
 $users = new User();
@@ -46,12 +46,11 @@ $userlist = $users->getUser();
 
 //loop trough array
 foreach($userlist as $key=>$pl) {
-    echo "<p>" . $pl['fname'] . " " . $pl['lname'] . "</p>";
+    echo "<p>" . $pl['fname'] . " " . $pl['lname'] . "</p><br>";
     echo "<a class='button1' href='usersingle.php?deleteid=" . $pl['fname'] . "'>SE ALLA DENNES INLÄGG >></a>" . "<br><br><hr>";
 }
 
  ?>
- </ul>
 
  <!--
  <a href="pictures/astaxin-f.jpg" data-lightbox="bild-1" class="bildprodukt-prodsida" data-title="Framsida">

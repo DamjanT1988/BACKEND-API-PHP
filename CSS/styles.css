@@ -189,6 +189,11 @@ p {
         background-color: white;
     }
 
+    img {
+        float: none;
+        max-width: 40%;
+    }
+
     #wrapper1 {
         background-color: #fff;
         max-width: 960px;
@@ -220,7 +225,7 @@ p {
     #mainfooter {
         display: inline-block;
         width: 100%;
-        background-color: #eb0808;
+        background-color: #4567cc;
         position: relative;
         text-align: center;
         font-size: 1em;

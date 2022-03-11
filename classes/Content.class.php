@@ -33,12 +33,9 @@ class Content {
     function getPostById($id) {
         $id = intval($id);
         $sqlquery = "SELECT * FROM news WHERE id=$id";
-
-        $result = $this->db->query($sqlquery);  
-        return mysqli_fetch_all($result, MYSQLI_ASSOC);
-
+        
         $result = mysqli_query($this->db, $sqlquery);
-        return $result->fetch_assoc();
+      return $result->fetch_assoc();
     }
 
     function updatePost(int $id, string $title, string $content, string $user) : bool {

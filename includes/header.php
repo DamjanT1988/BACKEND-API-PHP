@@ -2,7 +2,7 @@
 include("config.php");
 ?>
 <!DOCTYPE html>
-<html lang="se">
+<html lang="sv">
 <head>
     <title><?= $site_title . $divider . $page_title; ?></title>
     <meta charset="utf-8">
