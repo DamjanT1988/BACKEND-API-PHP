@@ -52,7 +52,23 @@ function getUser() {
 
 
 function checkUser(string $name, string $password) : bool {
-    if (password_verify($password, $hash)) {
+    
+    $sqlquery1 = "SELECT * FROM user WHERE fname='$name';";
+    $result = $this->db->query($sqlquery1);
+ 
+    if($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $stored_password = $row['password'];
+        
+        if(password_verify($password, $stored_password)) {
+            return true;
+        } else {
+            return false;
+        }
+}
+}
+
+/*
     $sqlquery = "SELECT * FROM user WHERE fname='$name' AND password='$password';";
     $result = $this->db->query($sqlquery);
 
@@ -63,8 +79,8 @@ function checkUser(string $name, string $password) : bool {
     }
 } else {
     return false;
-}
-}
+}*/
+
 
 //---SETTERS & GETTERS--//
     //set a name
