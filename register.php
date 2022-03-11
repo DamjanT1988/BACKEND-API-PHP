@@ -17,8 +17,8 @@ include("includes/header.php");
 <br>
 <label for="realnamener">Skriv in ditt namn:</label>
 <br>
-<input type="realfnamenew" name="realfnamenew" id="realfnamenew" value="förnamn">
-<input type="reallnamenew" name="reallnamenew" id="reallnamenew" value="efternamn">
+<input type="realfnamenew" name="realfnamenew" id="realfnamenew" placeholder="förnamn">
+<input type="reallnamenew" name="reallnamenew" id="reallnamenew" placeholder="efternamn">
 <br>
 <label for="employeeno">Skriv in ditt anställningsnummer:</label>
 <br>
