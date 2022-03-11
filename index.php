@@ -3,7 +3,7 @@ $page_title = "Startsida";
 include("includes/header.php");
 ?>
 
-<h2>Nyhetsporteln om datorer!</h2>
+<h2>Bloggen om allt kosttillskott och hälsa!</h2>
 
 <article>
 
@@ -52,6 +52,13 @@ foreach($userlist as $key=>$pl) {
 
  ?>
  </ul>
+
+ <!--
+ <a href="pictures/astaxin-f.jpg" data-lightbox="bild-1" class="bildprodukt-prodsida" data-title="Framsida">
+                        <img src="pictures/astaxin-f.jpg" class="bildprodukt-prodsida" alt="bild av astaxin">
+                    </a>
+                    <a href="pictures/ataxin-baksida.jpg" data-lightbox="bild-1" class="bildprodukt-prodsida" data-title="Baksida"></a>
+-->
 <?php
 include("includes/footer.php");
 ?>

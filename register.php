@@ -13,7 +13,7 @@ include("includes/header.php");
 <br>
 <label for="passwordnew">Välj ett starkt lösenord:</label>
 <br>
-<input type="passwordnew" name="passwordnew" id="passwordnew">
+<input type="password" name="passwordnew" id="passwordnew">
 <br>
 <label for="realnamener">Skriv in ditt namn:</label>
 <br>

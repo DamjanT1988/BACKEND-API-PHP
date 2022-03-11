@@ -52,6 +52,7 @@ function getUser() {
 
 
 function checkUser(string $name, string $password) : bool {
+    if (password_verify($password, $hash)) {
     $sqlquery = "SELECT * FROM user WHERE fname='$name' AND password='$password';";
     $result = $this->db->query($sqlquery);
 
@@ -60,6 +61,9 @@ function checkUser(string $name, string $password) : bool {
     } else {
         return false;
     }
+} else {
+    return false;
+}
 }
 
 //---SETTERS & GETTERS--//
@@ -77,7 +81,8 @@ function checkUser(string $name, string $password) : bool {
     //set a password
     function setPassword (string $passwordnew) {
         if($passwordnew != ""){
-            $this->password = $passwordnew;
+            $hashpassword = password_hash($passwordnew, PASSWORD_DEFAULT);
+            $this->password = $hashpassword;
             return true;
         } else {
             return false;
