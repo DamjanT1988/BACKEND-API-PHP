@@ -12,7 +12,7 @@ else {
 //    header('location: admin.php');
 }
 
-if(isset($_GET['deleteeid'])) {
+if(isset($_GET['deleteid'])) {
     $id = $_GET['deleteid'];
     if($post->deletePostById($id)) {
 //    header("location: admin.php");
@@ -29,7 +29,7 @@ if(isset($_GET['deleteeid'])) {
 $user = new User();
 
 
-
+/*
 if(isset($_POST['name'])) {
     $name = $_POST['name'];
     $name = htmlentities($name, ENT_QUOTES, 'UTF-8');
@@ -51,6 +51,7 @@ if(isset($_POST['name'])) {
 } else {
     //header("location: login.php");
 }
+*/
 
 if(!isset($_SESSION['inlogg'])) {
 //    header("location: login.php");
@@ -69,24 +70,24 @@ if(isset($_SESSION['errorlagring'])) {
     unset($_SESSION['errorlagring']);
 }
 ?>
-<form action="store.php" method="POST" id="content">
+<form action="store.php?id=<?= $id; ?>" method="POST" id="content">
 <label for="title">Ange titel för inlägg:</label>
 <br>
-<input type="text" name="title" id="title">
+<input type="text" name="title" id="title" value="<?= $details['title']; ?>">
 <br>
 <label for="content2">Ange innehåll för inlägg:</label>
 <br>
-<textarea form="content" name="content" id="content2" rows="10" cols="70"></textarea>
+<textarea form="content" name="content" id="content2" rows="10" cols="70" ><?= $details['content']; ?></textarea>
 <br>
-<input type="hidden" name="user" id="user" value="<?= $name; ?>">
+<input type="hidden" name="user" id="user" value="<?= $_COOKIE['Bert']; ?>">
 <br>
 <input type="submit" class="button1" value="Uppdatera inlägg">
 </form>
 <br><br>
 
-<h2>Dina egna befintliga blogginlägg</h2>
+<!--<h2>Dina egna befintliga blogginlägg</h2>-->
 <?php
-
+/*
 $getpost = new Content();
 
 $postlist = $getpost->getPost();
@@ -101,7 +102,7 @@ foreach($postlist as $key=>$pl) {
     echo "<br><a class='button1' href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . " ";
     echo "<a class='button1' href='change.php?deleteid=" . $pl['id'] . "'>ÄDNRA</a>" . "<br><br><hr>";
 }}
-
+*/
 ?>
 
 <?php

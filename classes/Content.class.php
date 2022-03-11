@@ -40,6 +40,29 @@ class Content {
         $result = mysqli_query($this->db, $sqlquery);
         return $result->fetch_assoc();
     }
+
+    function updatePost(int $id, string $title, string $content, string $user) : bool {
+
+        $title = $this->db->real_escape_string($title);
+        $content = $this->db->real_escape_string($content);
+        $user = $this->db->real_escape_string($user);
+
+    if(!$this->setTitle($title)) {
+        return false;
+    }
+    if(!$this->setContent($content)) {
+        return false;
+    }
+    if(!$this->setUser($user)) {
+        return false;
+    }
+
+        //SQL query
+        $sqlquery = "UPDATE news SET title='" . $this->title . "', content='" . $this->content . "', user='" . $this->user . "' WHERE id=$id;"; 
+
+        return mysqli_query($this->db, $sqlquery);
+    }
+    
 /*
      //get specific customer name from id
      function getCustomerNameFromId($id) {
