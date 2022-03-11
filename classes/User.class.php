@@ -68,19 +68,6 @@ function checkUser(string $name, string $password) : bool {
 }
 }
 
-/*
-    $sqlquery = "SELECT * FROM user WHERE fname='$name' AND password='$password';";
-    $result = $this->db->query($sqlquery);
-
-    if(!mysqli_fetch_all($result, MYSQLI_ASSOC) == "") {
-        return true;
-    } else {
-        return false;
-    }
-} else {
-    return false;
-}*/
-
 
 //---SETTERS & GETTERS--//
     //set a name
