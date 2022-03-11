@@ -34,9 +34,11 @@ class Content {
         $id = intval($id);
         $sqlquery = "SELECT * FROM news WHERE id=$id";
 
-        $result = $this->db->query($sqlquery);
-  
-        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+//        $result = $this->db->query($sqlquery);  
+//        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+        $result = mysqli_query($this->db, $sqlquery);
+        return $result->fetch_assoc();
     }
 /*
      //get specific customer name from id
@@ -73,7 +75,7 @@ class Content {
         return true;
     }
 
-    //delete customers
+    //delete posr
     function deletePostById(int $id) {
         //control if integer
         $id = intval($id);

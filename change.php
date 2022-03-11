@@ -2,33 +2,44 @@
 $page_title = "Administrera";
 include("includes/header.php");
 
-
-
 $post = new Content();
 
-if(isset($_GET['deleteid'])) {
-    $id = $_GET['deleteid'];
-    echo $id;
-    if($post->deletePostById($id)) {
-        header("location: admin.php");
-    }
+if(isset($_GET['changeid'])) {
+    $id = $_GET['changeid'];
+    $details = $post->getPostById($id);
+} 
+else {
+//    header('location: admin.php');
 }
 
+if(isset($_GET['deleteeid'])) {
+    $id = $_GET['deleteid'];
+    if($post->deletePostById($id)) {
+//    header("location: admin.php");
+}}
+
 ?>
+
+<br>
+<div><a class='button1' href='logout.php' id='logout'>Logga ut</a></div>
+<h2>Ändra inlägg <?= $details['title'];?> nedan!</h2>
 
 <?php
 
 $user = new User();
 
+
+
 if(isset($_POST['name'])) {
     $name = $_POST['name'];
     $name = htmlentities($name, ENT_QUOTES, 'UTF-8');
     $name = strip_tags($name);
+    $password = $_POST['password'];
 
     $cookieName = "Bert";
     $cookieValue = $name;
     setcookie($cookieName, $cookieValue, time() + (6000));
-
+    $_COOKIE['Bert'] = $_POST['name'];
 
     if($user->checkUser($name, $password)) {
         echo "<h3>Välkommen " . $name . "!</h3>";
@@ -42,14 +53,12 @@ if(isset($_POST['name'])) {
 }
 
 if(!isset($_SESSION['inlogg'])) {
-    header("location: login.php");
+//    header("location: login.php");
 }
 
 
 ?>
-<br>
-<div><a class='button1' href='logout.php' id='logout'>Logga ut</a></div>
-<h2>Administrera hemsidan nedan!</h2>
+
 <?php
 if(isset($_SESSION['lagring'])) {
     echo $_SESSION['lagring'];
@@ -71,7 +80,7 @@ if(isset($_SESSION['errorlagring'])) {
 <br>
 <input type="hidden" name="user" id="user" value="<?= $name; ?>">
 <br>
-<input type="submit" class="button1" value="Lägg in inlägg">
+<input type="submit" class="button1" value="Uppdatera inlägg">
 </form>
 <br><br>
 
@@ -82,10 +91,6 @@ $getpost = new Content();
 
 $postlist = $getpost->getPost();
 
-if(isset($_POST['name'])) {
-$getpost->setName($_POST['name']);
-$_COOKIE['Name'] = $_POST['name'];
-}
 
 foreach($postlist as $key=>$pl) {
     if($pl['user'] == $_COOKIE['Bert']){
@@ -93,7 +98,8 @@ foreach($postlist as $key=>$pl) {
     echo $pl['postdate'] . "<br><br>";
     echo $pl['content'] . "<br><br>";
     echo "Skrivet av: " . $pl['user'] . "<br>";
-    echo "<br><a class='button1' href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . "<br><br><hr>";
+    echo "<br><a class='button1' href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . " ";
+    echo "<a class='button1' href='change.php?deleteid=" . $pl['id'] . "'>ÄDNRA</a>" . "<br><br><hr>";
 }}
 
 ?>
