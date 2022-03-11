@@ -5,7 +5,7 @@ body {
 
 img {
     float: left;
-    max-width: 25%;
+    max-width: 20%;
 }
 
 #check {
@@ -30,11 +30,14 @@ img {
     color: #000;
     font-weight: bold;
     padding: 1%;
+    display: inline-block;
 }
 
 .menynamn {
     background-color: #4567cc;
-    padding: 0.5%;
+    padding: 2%;
+    font-size: 1.5em;
+    float: left;
     color: white;
     border-color: black;
     border: solid 2px;
@@ -68,9 +71,6 @@ a.menynamn {
     color: white;
 }
 
-#head {
-    display: inline-block;
-}
 
 #wrapper1 {
     background-color: #fff;
