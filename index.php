@@ -47,7 +47,7 @@ $userlist = $users->getUser();
 //loop trough array
 foreach($userlist as $key=>$pl) {
     echo "<p>" . $pl['fname'] . " " . $pl['lname'] . "</p>";
-    echo "<a class='button1' href='usersingle.php?deleteid=" . $pl['fname'] . "'>ALLA DENNES INLÄGG >></a>" . "<br><br><hr>";
+    echo "<a class='button1' href='usersingle.php?deleteid=" . $pl['fname'] . "'>SE ALLA DENNES INLÄGG >></a>" . "<br><br><hr>";
 }
 
  ?>
