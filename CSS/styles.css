@@ -4,7 +4,7 @@ body {
 }
 
 img {
-    float: left;
+    float: none;
     max-width: 20%;
 }
 

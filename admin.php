@@ -89,7 +89,7 @@ foreach($postlist as $key=>$pl) {
     echo $pl['content'] . "<br><br>";
     echo "Skrivet av: " . $pl['user'] . "<br>";
     echo "<br><a class='button1' href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . " ";
-    echo "<a class='button1' href='change.php?changeid=" . $pl['id'] . "'>ÄDNRA</a>" . "<br><br><hr>";
+    echo "<a class='button1' href='change.php?changeid=" . $pl['id'] . "'>ÄNDRA</a>" . "<br><br><hr>";
 }}
 
 ?>
