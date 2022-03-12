@@ -15,6 +15,7 @@ include("config.php");
     <div id="wrapper1">
     <div id="container">
     <img src="pictures/logotyp-svart.svg" alt="logotyp">
+    <h1>BLOGG!</h1>
     <div class="nav">
     <!--menu-->
     <a class="menynamn" href="index.php">START</a>

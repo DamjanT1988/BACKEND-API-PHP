@@ -24,8 +24,7 @@ if(isset($_GET['deleteid'])) {
 
 //save post info.
 $postlist = $getpost->getPost();
-var_dump($postlist);
-$postlist['title'];
+
 //fetch the latest id with post by time
 foreach(array_slice($postlist, 0, 5) as $key=>$pl) {
     echo "<h3>" . $pl['title'] . "</h3>";
