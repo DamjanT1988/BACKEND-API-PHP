@@ -138,6 +138,11 @@ a {
     font-weight: bolder;
 }
 
+a:hover {
+    color: #000;
+    background-color: #ece408;
+}
+
 .menu {
     font-size: 1.5em;
     padding-bottom: 10%;

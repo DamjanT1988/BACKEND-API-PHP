@@ -18,7 +18,7 @@ session_start();
 define("DBHOST", "localhost");
 define("DBUSER", "admin");
 define("DBPASS", "password");
-define("DBDATABASE", "foretagetab2")
+define("DBDATABASE", "foretagetab2");
 
 
 //MIUN-SERVER
@@ -26,7 +26,7 @@ define("DBDATABASE", "foretagetab2")
 define("DBHOST", "studentmysql.miun.se");
 define("DBUSER", "dato1700");
 define("DBPASS", "TVr2@2jJSc");
-define("DBDATABASE", "dato1700")
+define("DBDATABASE", "dato1700");
 */
 
 ?>

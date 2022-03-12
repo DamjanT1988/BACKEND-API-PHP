@@ -14,7 +14,7 @@ include("config.php");
 <body>
     <div id="wrapper1">
     <div id="container">
-    <img src="pictures/logotyp-svart.svg" alt="logotyp">
+    <a href="index.php"><img src="pictures/logotyp-svart.svg" alt="logotyp"></a>
     <h1>BLOGG!</h1>
     <div class="nav">
     <!--menu-->
