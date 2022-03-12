@@ -1,5 +1,5 @@
 <?php
-$page_title = "Startsida";
+$page_title = "Enskilt inläggg";
 include("includes/header.php");
 ?>
 

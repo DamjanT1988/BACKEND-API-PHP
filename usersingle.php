@@ -1,5 +1,5 @@
 <?php
-$page_title = "Administrera";
+$page_title = "Författarens inlägg";
 include("includes/header.php");
 ?>
 

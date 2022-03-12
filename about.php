@@ -1,5 +1,5 @@
 <?php
-$page_title = "Startsida";
+$page_title = "Om oss";
 include("includes/header.php");
 ?>
 

@@ -1,5 +1,5 @@
 <?php
-$page_title = "Administrera";
+$page_title = "Redigera";
 include("includes/header.php");
 
 //new class
