@@ -2,19 +2,15 @@
 $site_title = "Nordic Supplements";
 $divider = " | ";
 
-
-//Aktivera felrapportering
+//activae error reprting
 error_reporting(-1);
 ini_set("display_errors", 1);
 
-//2 SKAPA AUTOINCLUDE FÖR KLASSER
-
-//Autoinkludering av klasser
+//autoinclude class
 spl_autoload_register(function ($class_name) {
     include "classes/" . $class_name . ".class.php";
 });
 
-//7.5 AKTIVERA SESSIONVARIABEL
 session_start();
 
 //DB settings for MySQLi storage of terms (use in construct)

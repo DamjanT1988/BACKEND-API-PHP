@@ -16,9 +16,9 @@ include("config.php");
     <div id="container">
     <img src="pictures/logotyp-svart.svg" alt="logotyp">
     <div class="nav">
-
+    <!--menu-->
     <a class="menynamn" href="index.php">START</a>
-    <a class="menynamn" href="news.php">NYHETER</a>
+    <a class="menynamn" href="news.php">INLÄGG</a>
     <a class="menynamn" href="about.php">OM OSS</a>
     <a class="menynamn" href="login.php">LOGGA IN</a>
 

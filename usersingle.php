@@ -5,15 +5,18 @@ include("includes/header.php");
 
 <?php
 
-
+//new class
 $getpost = new Content();
 
+//get all post
 $postlist = $getpost->getPost();
 
+//get id from URL
 if(isset($_GET['deleteid'])) {
 $getpost->setUsername($_GET['deleteid']);
 }
 
+//get name
 $name = $getpost->getUsername();
 
 foreach($postlist as $key=>$pl) {

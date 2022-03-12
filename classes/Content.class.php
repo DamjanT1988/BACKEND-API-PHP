@@ -1,7 +1,6 @@
 <?php
-//functions in a class file are known as methods
 
-//CREATE CLASS
+//new class
 class Content {
     //properties to use
     private $db;
@@ -19,7 +18,7 @@ class Content {
             }
     }
 
-    //get customer list
+    //get post list
     function getPost() {
         $sqlquery = "SELECT * FROM news ORDER BY id DESC";
         //connect to db then send query, store the result
@@ -29,24 +28,29 @@ class Content {
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
-    //get specific customer from id
+    //get specific post from id
     function getPostById($id) {
+        //make integer
         $id = intval($id);
+        //SQL query
         $sqlquery = "SELECT * FROM news WHERE id=$id";
+        //send it to DB & save it
+        $result = mysqli_query($this->db, $sqlquery);
+        //return array
+        return $result->fetch_assoc();
 
-        $result = $this->db->query($sqlquery);
-
-        //get all with ass. array
-        return mysqli_fetch_all($result, MYSQLI_ASSOC); 
-   
+//        $result = $this->db->query($sqlquery);
+//        return mysqli_fetch_all($result, MYSQLI_ASSOC); 
     }
 
+    //update post with all arguments
     function updatePost(int $id, string $title, string $content, string $user) : bool {
-
+        //protect the input data from SQL injects
         $title = $this->db->real_escape_string($title);
         $content = $this->db->real_escape_string($content);
         $user = $this->db->real_escape_string($user);
 
+    //set every argument as private variable
     if(!$this->setTitle($title)) {
         return false;
     }
@@ -59,28 +63,18 @@ class Content {
 
         //SQL query
         $sqlquery = "UPDATE news SET title='" . $this->title . "', content='" . $this->content . "', user='" . $this->user . "' WHERE id=$id;"; 
-
+        //return query
         return mysqli_query($this->db, $sqlquery);
     }
     
-/*
-     //get specific customer name from id
-     function getCustomerNameFromId($id) {
-        $id = intval($id);
-        $sqlquery = "SELECT * FROM customers WHERE id=$id";
-        $result = $this->db->query($sqlquery);
-        $row = mysqli_fetch_array($result);
-
-        return $row['name'];
-    }
-*/
-    //add new customer
+    //add new post
     function addPost(string $title, string $content, string $user) {
             //control SQL-injections
             $title = $this->db->real_escape_string($title);
             $content = $this->db->real_escape_string($content);
             $user = $this->db->real_escape_string($user);
-    
+            
+        //set every argument as private variable
         if(!$this->setTitle($title)) {
             return false;
         }
@@ -91,46 +85,29 @@ class Content {
             return false;
         }
 
-
+        //query
         $sqlquery = "INSERT INTO news (title, content, user) VALUES('" . $this->title . "', '" . $this->content . "', '" . $this->user . "');";
         //send query to db, save the response
         $result = $this->db->query($sqlquery);
         return true;
     }
 
-    //delete posr
+    //delete post
     function deletePostById(int $id) {
-        //control if integer
+        //make integer
         $id = intval($id);
+        //query
         $sqlquery = "DELETE FROM news WHERE id=$id";
+        //database response saved
         $result = $this->db->query($sqlquery);
         return true;
     }
-/*
-    //update customer data
-    function updateCustomer($name, $email, $id) {
-        $id = intval($id);
-        //control content for sql inj & real email
-        if(!$this->setName($name)) {
-            return false;
-        }
-        if(!$this->setEmail($email)) {
-            return false;
-        }
-        $sqlquery = "UPDATE customers SET ='" . $this->name . "', email='" . $this->email . "' WHERE id=$id";
-        //send query to db, save the response
-        return $result = $this->db->query($sqlquery);
-
-
-
-    }
-    */
 
 //---SETTERS & GETTERS--//
     //set a name
     function setTitle (string $title) {
+        //check if empty
         if($title != "") {
-            //control for SQL injection..
             $this->title = $title;
             return true;
         } else{
@@ -138,7 +115,7 @@ class Content {
         }
     }
 
-    //set an content
+    //set content
     function setContent (string $content) {
         if($content != ""){
             $this->content = $content;
@@ -147,7 +124,7 @@ class Content {
             return false;
         }
     }
-    //set an content
+    //set user
     function setUser (string $user) {
         if($user != ""){
             $this->user = $user;
@@ -156,12 +133,12 @@ class Content {
             return false;
         }
     }
-
+    //set username
     function setUsername (string $user) {
         $this->user = $user;
         return true;
     } 
-
+    //get usernamee
     function getUsername () {
         return $this->user;
     }

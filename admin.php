@@ -2,11 +2,13 @@
 $page_title = "Administrera";
 include("includes/header.php");
 
+//new content
 $post = new Content();
 
+//get id from URL
 if(isset($_GET['deleteid'])) {
     $id = $_GET['deleteid'];
-    echo $id;
+    //delete post by id
     if($post->deletePostById($id)) {
         header("location: admin.php");
     }
@@ -16,20 +18,25 @@ if(isset($_GET['deleteid'])) {
 
 <?php
 
+//new instance of user
 $user = new User();
 
+//check POST & save in variables
 if(isset($_POST['name'])) {
     $name = $_POST['name'];
     $name = htmlentities($name, ENT_QUOTES, 'UTF-8');
     $name = strip_tags($name);
     $password = $_POST['password'];
 
+    //cookie for identifying user
     $cookieName = "Bert";
     $cookieValue = $name;
     setcookie($cookieName, $cookieValue, time() + (6000));
     $_COOKIE['Bert'] = $_POST['name'];
 
+    //check if user exists & the password
     if($user->checkUser($name, $password)) {
+        //print hello message if exits
         echo "<h3>Välkommen " . $name . "!</h3>";
         $_SESSION['inlogg'] = ""; 
     } else {
@@ -40,6 +47,7 @@ if(isset($_POST['name'])) {
     //header("location: login.php");
 }
 
+//check if not logged in
 if(!isset($_SESSION['inlogg'])) {
     header("location: login.php");
 }
@@ -50,6 +58,8 @@ if(!isset($_SESSION['inlogg'])) {
 <div><a class='button1' href='logout.php' id='logout'>Logga ut</a></div>
 <h2>Administrera hemsidan nedan!</h2>
 <?php
+
+//message if success or fail in adding post
 if(isset($_SESSION['lagring'])) {
     echo $_SESSION['lagring'];
     unset($_SESSION['lagring']);
@@ -59,6 +69,7 @@ if(isset($_SESSION['errorlagring'])) {
     unset($_SESSION['errorlagring']);
 }
 ?>
+<!--create form with POST to add post--> 
 <form action="store.php" method="POST" id="content">
 <label for="title">Ange titel för inlägg:</label>
 <br>
@@ -77,11 +88,13 @@ if(isset($_SESSION['errorlagring'])) {
 <h2>Dina egna befintliga blogginlägg</h2>
 <?php
 
+//new content
 $getpost = new Content();
 
+//get post & save
 $postlist = $getpost->getPost();
 
-
+//loop through array & print
 foreach($postlist as $key=>$pl) {
     if($pl['user'] == $_COOKIE['Bert']){
     echo "<h3>" . $pl['title'] . "</h3>";

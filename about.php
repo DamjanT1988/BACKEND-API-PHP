@@ -6,7 +6,7 @@ include("includes/header.php");
 <article>
 
 <h2>Om företaget</h2>
-
+<!--some text-->
  Att må bra på insidan har aldrig varit viktigare. Vi människor
                         lever generellt längre, och vi är noggrannare med vad vi äter
                         och hur vi rör oss. Att vi människor lever längre är för att vi har

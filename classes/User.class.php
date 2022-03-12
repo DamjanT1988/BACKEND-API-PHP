@@ -1,7 +1,8 @@
 <?php
 
+//new class
 class User {
-
+    //properties
     private $db;
     private $username;
     private $password;
@@ -9,7 +10,7 @@ class User {
     private $Lname;
     private $employeeno;
 
-
+//get database connection - constructor
 function __construct(){
     $this->db = new mysqli(DBHOST, DBUSER, DBPASS, DBDATABASE);
     if($this->db->connect_errno > 0) {
@@ -17,7 +18,9 @@ function __construct(){
     }
 }
 
+//add user with all arguments
 function addUser(string $emailnew, string $passwordnew, string $fnamenew, string $lnamenew, string $employeeno) {
+    //check respective variable is exist
     if(!$this->setEmail($emailnew)) {
         return false;
     }
@@ -33,29 +36,32 @@ function addUser(string $emailnew, string $passwordnew, string $fnamenew, string
     if(!$this->setEmployeeNo($employeeno)) {
         return false;
     }
-
+    //query
     $sqlquery = "INSERT INTO user (username, password, fname, lname, employeeno) VALUES('" . $this->username . "', '" . $this->password . "', '" . $this->Fname . "', '" . $this->Lname . "', '" . $this->employeeno . "');";
     //send query to db, save the response
     $result = $this->db->query($sqlquery);
+    
     return true;
 }
 
-
+//get user information
 function getUser() {
+    //query
     $sqlquery = "SELECT * FROM user ORDER BY id DESC";
     //connect to db then send query, store the result
     $result = $this->db->query($sqlquery);
-
     //get all with ass. array
     return mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 
-
+//verify user exist
 function checkUser(string $name, string $password) : bool {
-    
+    //query
     $sqlquery1 = "SELECT * FROM user WHERE fname='$name';";
+    //send query, save response
     $result = $this->db->query($sqlquery1);
  
+    //verify hashed password
     if($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $stored_password = $row['password'];
@@ -65,13 +71,13 @@ function checkUser(string $name, string $password) : bool {
         } else {
             return false;
         }
+    }
 }
-}
-
 
 //---SETTERS & GETTERS--//
     //set a name
     function setEmail (string $emailnew) {
+        //control if empty
         if($emailnew != "") {
             //control for SQL injection..
             $this->username = $emailnew;
@@ -84,6 +90,7 @@ function checkUser(string $name, string $password) : bool {
     //set a password
     function setPassword (string $passwordnew) {
         if($passwordnew != ""){
+            //hash the password
             $hashpassword = password_hash($passwordnew, PASSWORD_DEFAULT);
             $this->password = $hashpassword;
             return true;
@@ -118,7 +125,5 @@ function checkUser(string $name, string $password) : bool {
                 return false;
             }
         }
-
-
 }
 ?>
