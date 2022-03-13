@@ -49,17 +49,28 @@ $userlist = $users->getUser();
 //loop trough array
 foreach($userlist as $key=>$pl) {
     echo "<p>" . $pl['fname'] . " " . $pl['lname'] . "</p><br>";
-    echo "<a class='button1' href='usersingle.php?deleteid=" . $pl['fname'] . "'>SE ALLA DENNES INLÄGG >></a>" . "<br><br><hr>";
+    echo "<a class='button1' href='usersingle.php?deleteid=" . $pl['fname'] . "'>SE ALLA DENNES INLÄGG</a>" . "<br><br><hr>";
 }
 
  ?>
 
- <!--
- <a href="pictures/astaxin-f.jpg" data-lightbox="bild-1" class="bildprodukt-prodsida" data-title="Framsida">
-                        <img src="pictures/astaxin-f.jpg" class="bildprodukt-prodsida" alt="bild av astaxin">
+ <!--advertise section -->
+<h2>Rekommenderad produkt:</h2> 
+<h3>Astaxin 120 kaps</h3>
+<a href="pictures/astaxin-f.jpg" data-lightbox="bild-1" data-title="Framsida">
+                        <picture><img src="pictures/astaxin-f.jpg" class="bildprodukt-prodsida" alt="bild av astaxin">
+                        </picture>
                     </a>
-                    <a href="pictures/ataxin-baksida.jpg" data-lightbox="bild-1" class="bildprodukt-prodsida" data-title="Baksida"></a>
--->
+                    <a href="pictures/ataxin-baksida.jpg" data-lightbox="bild-1" data-title="Baksida"></a>
+
+                    <br>
+                    <a class='button1' href='http://studenter.miun.se/~dato1700/dt163g/projekt/astaxin.html'>LÄS OM PRODUKTEN</a>
+<!--script for picture slides-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+
 <?php
 include("includes/footer.php");
 ?>

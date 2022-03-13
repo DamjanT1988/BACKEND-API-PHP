@@ -3,16 +3,14 @@ body {
     font-family: Arial, sans-serif;
 }
 
-img {
-    float: none;
-    max-width: 20%;
-}
-
-
-#textner {
-    text-align: center;
-    position: relative;
-    font-size: 0.95em;
+#wrapper1 {
+    background-color: #fff;
+    max-width: 960px;
+    margin: 0 auto;
+    line-height: 1.3em;
+    padding: 5.25%;
+    max-width: 960px;
+    padding-top: 1%;
 }
 
 /*HUVUDNAVIGATION*/
@@ -41,6 +39,27 @@ img {
     text-decoration: none;
 }
 
+#mainmenu {
+    float: left;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    min-width: 20%;
+    border: solid #eb0808;
+    border-width: 10px;
+    margin-right: 5%;
+}
+
+img {
+    float: none;
+    max-width: 20%;
+}
+
+#textner {
+    text-align: center;
+    position: relative;
+    font-size: 0.95em;
+}
+
 .current {
     border-bottom: solid 8px #4567cc;
 }
@@ -52,8 +71,16 @@ div.postmain {
     text-overflow: ellipsis;
 }
 
+/*LÄNKAR*/
+
 a {
+    font-weight: bolder;
     color: white;
+}
+
+a:hover {
+    color: #000;
+    background-color: #ece408;
 }
 
 a.topptextlink {
@@ -68,33 +95,12 @@ a.menynamn {
     color: white;
 }
 
-
-#wrapper1 {
-    background-color: #fff;
-    max-width: 960px;
-    margin: 0 auto;
-    line-height: 1.3em;
-    padding: 5.25%;
-    max-width: 960px;
-    padding-top: 1%;
-}
-
 hr {
     color: #eb0808;
     height: 0px;
     border-style: solid;
     border-width: 6px;
     margin-top: 0%;
-}
-
-#mainmenu {
-    float: left;
-    font-size: 1.5em;
-    line-height: 1.5em;
-    min-width: 20%;
-    border: solid #eb0808;
-    border-width: 10px;
-    margin-right: 5%;
 }
 
 .bildprodukt-prodsida {
@@ -134,20 +140,12 @@ form {
     text-decoration: none;
 }
 
-a {
-    font-weight: bolder;
-}
-
-a:hover {
-    color: #000;
-    background-color: #ece408;
-}
-
 .menu {
     font-size: 1.5em;
     padding-bottom: 10%;
 }
 
+/*RUBRIKER*/
 h1 {
     margin-bottom: 30px;
     font-size: 3.5em;
@@ -169,6 +167,7 @@ p {
     line-height: 1.5em;
 }
 
+/*SIDFOT*/
 #mainfooter {
     display: inline-block;
     width: 100%;
@@ -205,6 +204,7 @@ p {
         padding-top: 1%;
     }
 
+/*RUBRIKER*/
     h1 {
         font-size: 2em;
     }
@@ -224,6 +224,7 @@ p {
         line-height: 1.35em;
     }
 
+/*SIDFOT*/
     #mainfooter {
         display: inline-block;
         width: 100%;
