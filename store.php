@@ -31,7 +31,7 @@ if(isset($_POST['emailnew'])) {
 //add user &  print success or fail
 if($addNewUser->addUser($emailnew, $passwordnew, $fnamenew, $lnamenew, $employeeno)) {
         $_SESSION['lagring'] = "Konto skapat!";
-       
+        header("location: login.php");
         $_SESSION['Namn'] = $fnamenew;
     } else {
         $_SESSION['errorlagring'] = "Fyll i alla fält";

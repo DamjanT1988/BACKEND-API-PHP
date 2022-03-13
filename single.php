@@ -19,7 +19,7 @@ if(isset($_GET['deleteid'])) {
     $id = $_GET['deleteid'];
 
     //get post by id
-    $idpost = $getpost->getPostById($id);
+    $idpost = $getpost->getPostByIdSingle($id);
     //loop post
     foreach($idpost as $pl) {
         echo "<h2>" . $pl['title'] . "</h2>";
