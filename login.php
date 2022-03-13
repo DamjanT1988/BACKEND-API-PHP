@@ -11,7 +11,7 @@ include("includes/header.php");
 <br>
 <input type="text" name="name" id="name">
 <br>
-<label for="password">Din lösenord:</label>
+<label for="password">Ditt lösenord:</label>
 <br>
 <input type="password" name="password" id="password">
 <br><br>

@@ -21,10 +21,11 @@ class Content {
 
     
     //save image nanme
+    /*
     function saveImg (string $storedfile) {
             $this->storedfile = $storedfile;
             return true;
-    }
+    }*/
 
     //get post list
     function getPost() {
@@ -58,6 +59,7 @@ class Content {
         //SQL query
         $sqlquery = "SELECT * FROM news WHERE id=$id";
         //send it to DB & save it
+
         $result = $this->db->query($sqlquery);
         return mysqli_fetch_all($result, MYSQLI_ASSOC); 
     }
@@ -108,7 +110,7 @@ class Content {
         }
 
         //query
-        $sqlquery = "INSERT INTO news (title, content, user, storedfile) VALUES('" . $this->title . "', '" . $this->content . "', '" . $this->user . "', '" . $this->storedfile . "');";
+        $sqlquery = "INSERT INTO news (title, content, user) VALUES('" . $this->title . "', '" . $this->content . "', '" . $this->user . "');";
         //send query to db, save the response
         $result = $this->db->query($sqlquery);
         return true;

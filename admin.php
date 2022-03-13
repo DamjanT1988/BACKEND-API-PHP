@@ -88,7 +88,7 @@ if(isset($_SESSION['errorlagring'])) {
 <br><br>
 
 <?php
-                   if (isset($_FILES['file'])) {
+/*                   if (isset($_FILES['file'])) {
     
                     //Kontrollerar att uppladdad bild är av rätt typ (JPEG) och att storleken
                     //inte överstiger en viss storlek - i det här fallet väldigt stor...
@@ -157,19 +157,18 @@ if(isset($_SESSION['errorlagring'])) {
                             echo "Ej JPEG/Bildfilen större än 200kb.";
                         }
                 } // Slut på isset(FILE)
-                ?>
-    
+              */  ?>
+    <!--
                 <div id="uploadform">
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="200000" /> <!-- 200K max storlek -->
+                        <input type="hidden" name="MAX_FILE_SIZE" value="200000" /> 
                         <label for="file"><strong>Filnamn:</strong></label>
                         <input type="file" name="file" id="file" />
                         <input type="submit" value="Ladda upp" />	
                     </form>
-                </div><!-- /uploadform -->
-
-?>
-
+                </div>
+    -->
+            
 
 <h2>Dina egna befintliga blogginlägg</h2>
 <?php
