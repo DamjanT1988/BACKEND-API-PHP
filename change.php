@@ -54,7 +54,7 @@ if(isset($_SESSION['errorlagring'])) {
 <br>
 <label for="content2">Ange innehåll för inlägg:</label>
 <br>
-<textarea form="content" name="content" id="content2" rows="10" cols="70" ><?= $details['content']; ?></textarea>
+<textarea form="content" name="content" id="content2" rows="10" cols="45" ><?= $details['content']; ?></textarea>
 <br>
 <input type="hidden" name="user" id="user" value="<?= $_COOKIE['Bert']; ?>">
 <br>

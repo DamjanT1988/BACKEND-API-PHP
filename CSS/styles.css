@@ -197,12 +197,32 @@ p {
 
     #wrapper1 {
         background-color: #fff;
-        max-width: 960px;
+        max-width: 500px;
         margin: 0 auto;
         padding: 1.25%;
-        max-width: 960px;
         padding-top: 1%;
     }
+
+    .menynamn {
+        background-color: #4567cc;
+        padding: 1%;
+        font-size: 0.9em;
+        float: left;
+        color: white;
+        border-color: black;
+        border: solid 2px;
+        text-decoration: none;
+    }
+    div.postmain {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }    
+
+Textarea {
+    max-width: 450px;
+}
 
 /*RUBRIKER*/
     h1 {
@@ -233,7 +253,7 @@ p {
         text-align: center;
         font-size: 1em;
         line-height: 1.5em;
-        padding: 0%;
+        margin: 0%;
         margin-top: 5%;
     }
 

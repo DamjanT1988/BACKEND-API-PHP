@@ -79,7 +79,7 @@ if(isset($_SESSION['errorlagring'])) {
 <br>
 <label for="content2">Ange innehåll för inlägg:</label>
 <br>
-<textarea form="content" name="content" id="content2" rows="10" cols="70"></textarea>
+<textarea form="content" name="content" id="content2" rows="10" cols="45"></textarea>
 <br>
 <input type="hidden" name="user" id="user" value="<?= $_COOKIE['Bert']; ?>">
 <br>

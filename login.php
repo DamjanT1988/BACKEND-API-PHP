@@ -20,7 +20,7 @@ include("includes/header.php");
 </form>
 <br>
 <br>
-<div><a class='button1' href='register.php' id='logout'>Registrera ny användare >></a></div>
+<div><a class='button1' href='register.php' id='logout'>Registrera ny användare</a></div>
 <br><br>
 <?php
 
