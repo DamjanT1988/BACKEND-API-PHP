@@ -1,9 +1,7 @@
-# Damjans moment 4
+# Damjans projekt
 Kurs: DT093G - Webbutveckling II
 ## Uppgift
 Det som ska göras i momentet är..
-1. Planera kod med UML-diagram/ER-diagram
-2. Anslut med MySQL/MariaDB
-3. Skapa klasser med databasanslutningar
-4. Hantera data från formulär som också lagras i en databas
-5. Använda vanliga SQL-kommandon 
+1. Utveckla en webbplats som är en bloggportal
+2. Använd SQL-databas för inlogg & inlägg
+3. Skriv rapport
