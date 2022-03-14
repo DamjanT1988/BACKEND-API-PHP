@@ -37,7 +37,7 @@ foreach(array_slice($postlist, 0, 5) as $key=>$pl) {
 ?>
 </div>
 </article>
-<h2>Här är alla skribenter på bloggen:</h2>
+<h2>Alla skribenter på bloggen:</h2>
 
  <?php
 
