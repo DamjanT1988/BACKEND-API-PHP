@@ -4,6 +4,7 @@ include("includes/header.php");
 ?>
 
 <h2>Bloggen om allt kosttillskott och hälsa!</h2>
+<p>Nordoc Supplements är ett varumärke med stora ambitioner i kosttillskott i Norden. Den här bloggen används av anställda och ambassadörer av varumärket runtom i Norden!
 
 <article>
 
