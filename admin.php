@@ -87,9 +87,7 @@ if(isset($_SESSION['errorlagring'])) {
 </form>
 <br><br>
 
-<?php
-
-            
+           
 
 <h2>Dina egna befintliga blogginlägg</h2>
 <?php
