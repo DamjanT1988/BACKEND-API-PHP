@@ -20,12 +20,6 @@ class Content {
     }
 
     
-    //save image nanme
-    /*
-    function saveImg (string $storedfile) {
-            $this->storedfile = $storedfile;
-            return true;
-    }*/
 
     //get post list
     function getPost() {
@@ -48,8 +42,7 @@ class Content {
         //return array
         return $result->fetch_assoc();
 
-//        $result = $this->db->query($sqlquery);
-//        return mysqli_fetch_all($result, MYSQLI_ASSOC); 
+
     }
 
     //get specific post from id
@@ -94,8 +87,6 @@ class Content {
             $title = $this->db->real_escape_string($title);
             $content = $this->db->real_escape_string($content);
             $user = $this->db->real_escape_string($user);
-     //       $storedfile = $this->storedfile;
-     //       $storedfile = $this->db->real_escape_string($$storedfile);
     
             
         //set every argument as private variable
