@@ -23,7 +23,7 @@ if(isset($_GET['deleteid'])) {
 $user = new User();
 
 //check POST & save in variables
-if(isset($_POST['name'])) {
+if(isset($_POST['name'], $_POST['password'])) {
     $name = $_POST['name'];
     $name = htmlentities($name, ENT_QUOTES, 'UTF-8');
     $name = strip_tags($name);
@@ -31,7 +31,7 @@ if(isset($_POST['name'])) {
     $password = htmlentities($password, ENT_QUOTES, 'UTF-8');
     $password = strip_tags($password);
 
-
+    if(!($name == "" || $password == "")) {
     //cookie for identifying user
     $cookieName = "Bert";
     $cookieValue = $name;
@@ -45,10 +45,11 @@ if(isset($_POST['name'])) {
         $_SESSION['inlogg'] = ""; 
     } else {
        $_SESSION['errorinlogg'] = "Fel inloggningsuppgifter";
-     header("location: login.php");
+     //header("location: login.php");
     } 
-} else {
-    //header("location: login.php");
+    } else {
+        $_SESSION['errorinlogg'] = "Fel inloggningsuppgifter";
+} 
 }
 
 //check if not logged in

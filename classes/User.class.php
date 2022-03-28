@@ -67,10 +67,20 @@ function checkUser(string $name, string $password) : bool {
     //send query, save response
     $result = $this->db->query($sqlquery1);
  
+/*    if ($result->num_rows > 0) {
+        $row1 = $result->fetch_assoc();
+        $stored_name = $row1['name'];
+        if ($name == $stored_name) {
+        return true;
+    } else {
+        return false;
+    }
+    }*/
+
     //verify hashed password
     if($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $stored_password = $row['password'];
+        $row2 = $result->fetch_assoc();
+        $stored_password = $row2['password'];
         
         if(password_verify($password, $stored_password)) {
             return true;
@@ -79,6 +89,7 @@ function checkUser(string $name, string $password) : bool {
         }
     }
 }
+
 
 //---SETTERS & GETTERS--//
     //set a name
