@@ -62,8 +62,15 @@ $addContent = new Content();
 //or take in post & save in variables
     if(isset($_POST['title'])) {
     $title = $_POST['title'];
+    $title = htmlentities($title, ENT_QUOTES, 'UTF-8');
+    $title = strip_tags($title);
     $content = $_POST['content'];
+    $content = htmlentities($content, ENT_QUOTES, 'UTF-8');
+    $content = strip_tags($content);
     $user = $_POST['user'];
+    $user = htmlentities($user, ENT_QUOTES, 'UTF-8');
+    $user = strip_tags($user);
+
 
 //save in post
 if($addContent->addPost($title, $content, $user)) {

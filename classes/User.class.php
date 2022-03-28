@@ -36,6 +36,12 @@ function addUser(string $emailnew, string $passwordnew, string $fnamenew, string
     if(!$this->setEmployeeNo($employeeno)) {
         return false;
     }
+      //protect the input data from SQL injects
+      $emailnew = $this->db->real_escape_string($emailnew);
+      $passwordnew = $this->db->real_escape_string($passwordnew);
+      $fnamenew = $this->db->real_escape_string($fnamenew);
+      $lnamenew = $this->db->real_escape_string($lnamenew);
+      $employeeno = $this->db->real_escape_string($employeeno);
     //query
     $sqlquery = "INSERT INTO user (username, password, fname, lname, employeeno) VALUES('" . $this->username . "', '" . $this->password . "', '" . $this->Fname . "', '" . $this->Lname . "', '" . $this->employeeno . "');";
     //send query to db, save the response

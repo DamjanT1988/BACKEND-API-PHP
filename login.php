@@ -1,6 +1,13 @@
 <?php
 $page_title = "Logga in";
 include("includes/header.php");
+
+//check if logged in, go to admin directly
+if(!isset($_COOKIE['Bert'])) {
+//do nothing
+} else {
+    header("location: admin.php");
+}
 ?>
 
 <h2>Logga in nedan!</h2>

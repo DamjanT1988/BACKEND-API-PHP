@@ -5,6 +5,7 @@ include("includes/header.php");
 //new content
 $post = new Content();
 
+
 //get id from URL
 if(isset($_GET['deleteid'])) {
     $id = $_GET['deleteid'];
@@ -27,11 +28,14 @@ if(isset($_POST['name'])) {
     $name = htmlentities($name, ENT_QUOTES, 'UTF-8');
     $name = strip_tags($name);
     $password = $_POST['password'];
+    $password = htmlentities($password, ENT_QUOTES, 'UTF-8');
+    $password = strip_tags($password);
+
 
     //cookie for identifying user
     $cookieName = "Bert";
     $cookieValue = $name;
-    setcookie($cookieName, $cookieValue, time() + (6000));
+    setcookie($cookieName, $cookieValue, time() + (600));
     $_COOKIE['Bert'] = $_POST['name'];
 
     //check if user exists & the password
@@ -41,7 +45,7 @@ if(isset($_POST['name'])) {
         $_SESSION['inlogg'] = ""; 
     } else {
        $_SESSION['errorinlogg'] = "Fel inloggningsuppgifter";
-     // header("location: login.php");
+     header("location: login.php");
     } 
 } else {
     //header("location: login.php");
@@ -50,7 +54,7 @@ if(isset($_POST['name'])) {
 //check if not logged in
 if(!isset($_SESSION['inlogg'])) {
     header("location: login.php");
-}
+} else
 
 
 ?>
