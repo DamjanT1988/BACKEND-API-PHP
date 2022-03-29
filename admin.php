@@ -45,10 +45,13 @@ if(isset($_POST['name'], $_POST['password'])) {
         $_SESSION['inlogg'] = ""; 
     } else {
        $_SESSION['errorinlogg'] = "Fel inloggningsuppgifter";
-     //header("location: login.php");
+        //destroy cookie
+        setcookie("Bert", "", time() - 3600);
+        //header("location: logout.php");
+
     } 
     } else {
-        $_SESSION['errorinlogg'] = "Fel inloggningsuppgifter";
+    $_SESSION['errorinlogg'] = "Fel inloggningsuppgifter";
 } 
 }
 

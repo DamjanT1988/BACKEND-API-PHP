@@ -20,6 +20,20 @@ function __construct(){
 
 //add user with all arguments
 function addUser(string $emailnew, string $passwordnew, string $fnamenew, string $lnamenew, string $employeeno) {
+
+//query
+$sqlquery1 = "SELECT * FROM user WHERE fname='$fnamenew';";
+//send query, save response
+$result = $this->db->query($sqlquery1);
+
+if ($result->num_rows > 0) {
+    $row1 = $result->fetch_assoc();
+    $stored_no1 = $row1['employeeno'];
+    if ($employeeno == $stored_no1) {
+    return false;
+}
+}
+
     //check respective variable is exist
     if(!$this->setEmail($emailnew)) {
         return false;
@@ -67,15 +81,15 @@ function checkUser(string $name, string $password) : bool {
     //send query, save response
     $result = $this->db->query($sqlquery1);
  
-/*    if ($result->num_rows > 0) {
+    if ($result->num_rows > 0) {
         $row1 = $result->fetch_assoc();
-        $stored_name = $row1['name'];
+        $stored_name = $row1['fname'];
         if ($name == $stored_name) {
         return true;
     } else {
         return false;
     }
-    }*/
+    
 
     //verify hashed password
     if($result->num_rows > 0) {
@@ -88,6 +102,9 @@ function checkUser(string $name, string $password) : bool {
             return false;
         }
     }
+} else {
+    return false;
+}
 }
 
 

@@ -31,9 +31,9 @@ include("includes/header.php");
 
 <?php
 //error if wrong login info.
-if(isset($_SESSION['errorinlogg'])) {
-    echo $_SESSION['errorinlogg'];
-    unset($_SESSION['errorinlogg']);
+if(isset($_SESSION['errorlagring'])) {
+    echo $_SESSION['errorlagring'];
+    unset($_SESSION['errorlagring']);
 }
 ?>
 <?php

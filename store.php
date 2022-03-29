@@ -35,7 +35,7 @@ if($addNewUser->addUser($emailnew, $passwordnew, $fnamenew, $lnamenew, $employee
         $_SESSION['Namn'] = $fnamenew;
     } else {
         $_SESSION['errorlagring'] = "Fyll i alla fält";
-       
+        header("location: register.php");
     }
 }
 
