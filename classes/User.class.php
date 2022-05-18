@@ -6,8 +6,6 @@ class User {
     private $db;
     private $username;
     private $password;
-    private $Fname;
-    private $Lname;
     private $employeeno;
 
 //get database connection - constructor
