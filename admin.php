@@ -5,16 +5,6 @@ include("includes/header.php");
 //new content
 $post = new Content();
 
-
-//get id from URL
-if(isset($_GET['deleteid'])) {
-    $id = $_GET['deleteid'];
-    //delete post by id
-    if($post->deletePostById($id)) {
-        header("location: admin.php");
-    }
-}
-
 ?>
 
 <?php
@@ -88,36 +78,34 @@ if(isset($_SESSION['errorlagring'])) {
 <br>
 <textarea form="content" name="content" id="content2" rows="10" cols="45"></textarea>
 <br>
-<input type="hidden" name="user" id="user" value="<?= $_COOKIE['Bert']; ?>">
+<!--<input type="hidden" name="user" id="user" value="<?= $_COOKIE['Bert']; ?>">-->
 <br>
-<input type="submit" class="button1" value="Lägg in inlägg">
+<input type="submit" class="button2" value="Lägg in inlägg">
 </form>
 <br><br>
 
            
 
-<h2>Alla order syns nedan!</h2>
+<h2>Alla order nedan - senast först!</h2>
 <?php
 
 //get post & save - USE TRUE AS SECOND PARAMETER
 $postlist = json_decode(file_get_contents('http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorder=orderall'), true);
 
-
-//var_dump($postlist);
-
-//loop through array & print
-//for ($i = 0; $i < count($postlist); $i++)  {
-//    echo $postlist[$i];
-//}
+//ÄNDRA LÄNK INNAN INLÄMNING
 
 foreach($postlist as $key=>$pl) {
-  echo $pl['type'];
-    //echo "<h3>" . $pl['title'] . "</h3>";
-    //echo $pl['postdate'] . "<br><br>";
-    //echo $pl['content'] . "<br><br>";
-    //echo "Skrivet av: " . $pl['user'] . "<br>";
-    //echo "<br><a class='button1' href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . " ";
-    //echo "<a class='button1' href='change.php?changeid=" . $pl['id'] . "'>ÄNDRA</a>" . "<br><br><hr>";
+    echo "<h3><b>Orderid:</b> ". $pl['id'] . "</h3>";
+    echo "<p><b>Ordertyp:</b> ". $pl['type'] . "</p>";
+    echo "<p><b>Ankomst:</b> " . $pl['date_order'] . " - kl:" . $pl['time_order'] . "</p>";
+    echo "<p><b>Orderinnehåll:</b> " . $pl['content'] . "</p>";
+    echo "<p><b>Namn/tel.nr. från beställaren:</b> " .  $pl['customer_name'] . " - " . $pl['customer_phone'] . "</p>";
+    echo "<p><b>Orderbelopp:</b> " . $pl['cost'] . "</p>";
+    echo "<p><b>Ankomsttyp:</b> " . $pl['pickup_arrival'] . "</p>";
+    echo "<p><b>Status:</b> " . $pl['status'] . "</p>";
+    echo "<p><b>Order lagd:</b> " . $pl['created'] . "</p>";
+    echo "<br><a class='button1'id='" . $pl['id'] . "'>RADERA</a>";
+    echo "<a class='button2' href='change.php?changeid=" . $pl['id'] . "'>ÄNDRA</a>" . "<br><br><hr>";
 }
 ?>
 

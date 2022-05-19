@@ -134,11 +134,20 @@ form {
 
 .button1 {
     font-size: 1em;
-    background-color: red;
+    background-color: black;
     color: white;
     padding: 1%;
     text-decoration: none;
     float: right;
+}
+
+.button2 {
+    font-size: 1em;
+    background-color: red;
+    color: white;
+    padding: 1%;
+    text-decoration: none;
+    float: left;
 }
 
 .menu {
