@@ -96,26 +96,29 @@ if(isset($_SESSION['errorlagring'])) {
 
            
 
-<h2>Dina egna befintliga blogginlägg</h2>
+<h2>Alla order syns nedan!</h2>
 <?php
 
-//new content
-$getpost = new Content();
+//get post & save - USE TRUE AS SECOND PARAMETER
+$postlist = json_decode(file_get_contents('http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorder=orderall'), true);
 
-//get post & save
-$postlist = $getpost->getPost();
+
+//var_dump($postlist);
 
 //loop through array & print
-foreach($postlist as $key=>$pl) {
-    if($pl['user'] == $_COOKIE['Bert']){
-    echo "<h3>" . $pl['title'] . "</h3>";
-    echo $pl['postdate'] . "<br><br>";
-    echo $pl['content'] . "<br><br>";
-    echo "Skrivet av: " . $pl['user'] . "<br>";
-    echo "<br><a class='button1' href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . " ";
-    echo "<a class='button1' href='change.php?changeid=" . $pl['id'] . "'>ÄNDRA</a>" . "<br><br><hr>";
-}}
+//for ($i = 0; $i < count($postlist); $i++)  {
+//    echo $postlist[$i];
+//}
 
+foreach($postlist as $key=>$pl) {
+  echo $pl['type'];
+    //echo "<h3>" . $pl['title'] . "</h3>";
+    //echo $pl['postdate'] . "<br><br>";
+    //echo $pl['content'] . "<br><br>";
+    //echo "Skrivet av: " . $pl['user'] . "<br>";
+    //echo "<br><a class='button1' href='admin.php?deleteid=" . $pl['id'] . "'>RADERA</a>" . " ";
+    //echo "<a class='button1' href='change.php?changeid=" . $pl['id'] . "'>ÄNDRA</a>" . "<br><br><hr>";
+}
 ?>
 
 <?php

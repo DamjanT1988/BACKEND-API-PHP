@@ -33,6 +33,9 @@ if(isset($_SESSION['errorlagring'])) {
     unset($_SESSION['errorlagring']);
 }
 ?>
+
+<h2>Alla användare registrerade!</h2>
+
 <?php
 include("includes/footer.php");
 ?>
