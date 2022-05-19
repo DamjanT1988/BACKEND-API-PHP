@@ -29,7 +29,7 @@ body {
 }
 
 .menynamn {
-    background-color: #4567cc;
+    background-color: #be805f;
     padding: 2%;
     font-size: 1.5em;
     float: left;
@@ -51,7 +51,7 @@ body {
 
 img {
     float: none;
-    max-width: 20%;
+    max-width: 12%;
 }
 
 #textner {
@@ -138,6 +138,7 @@ form {
     color: white;
     padding: 1%;
     text-decoration: none;
+    float: right;
 }
 
 .menu {
@@ -148,14 +149,14 @@ form {
 /*RUBRIKER*/
 h1 {
     margin-bottom: 30px;
-    font-size: 6em;
+    font-size: 4em;
     float: right;
     position: relative;
     max-width: 100%;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 3em;
 }
 
 h3 {
@@ -165,7 +166,7 @@ h3 {
 
 
 p {
-    font-size: 2em;
+    font-size: 1.3em;
     line-height: 1.5em;
 }
 

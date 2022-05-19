@@ -75,13 +75,13 @@ function getUser() {
 //verify user exist
 function checkUser(string $name, string $password) : bool {
     //query
-    $sqlquery1 = "SELECT * FROM user WHERE fname='$name';";
+    $sqlquery1 = "SELECT * FROM user WHERE username='$name';";
     //send query, save response
     $result = $this->db->query($sqlquery1);
  
     if ($result->num_rows > 0) {
         $row1 = $result->fetch_assoc();
-        $stored_name = $row1['fname'];
+        $stored_name = $row1['username'];
         if ($name == $stored_name) {
         return true;
     } else {

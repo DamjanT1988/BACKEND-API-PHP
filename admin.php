@@ -41,7 +41,7 @@ if(isset($_POST['name'], $_POST['password'])) {
     //check if user exists & the password
     if($user->checkUser($name, $password)) {
         //print hello message if exits
-        echo "<h3>Välkommen " . $name . "!</h3>";
+        //echo "<p>Välkommen " . $name . "!</p>";
         $_SESSION['inlogg'] = ""; 
     } else {
        $_SESSION['errorinlogg'] = "Fel inloggningsuppgifter";
@@ -63,8 +63,7 @@ if(!isset($_SESSION['inlogg'])) {
 
 ?>
 <br>
-<div><a class='button1' href='logout.php' id='logout'>Logga ut</a></div>
-<h2>Administrera hemsidan nedan!</h2>
+<h2>Administrera order!</h2>
 <?php
 
 //message if success or fail in adding post
@@ -81,7 +80,7 @@ if(isset($_SESSION['errorlagring'])) {
 
 
 <form action="store.php" method="POST" id="content">
-<label for="title">Ange titel för inlägg:</label>
+<label for="title">Ange titel för order:</label>
 <br>
 <input type="text" name="title" id="title">
 <br>
