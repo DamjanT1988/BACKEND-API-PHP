@@ -36,7 +36,7 @@ if(!isset($_COOKIE['Bert'])) {
 
 <!--create table-->
 <form action="admin.php" method="POST">
-<label for="name">Ditt förnamn:</label>
+<label for="name">Ditt användarnamn:</label>
 <br>
 <input type="text" name="name" id="name">
 <br>
@@ -44,7 +44,7 @@ if(!isset($_COOKIE['Bert'])) {
 <br>
 <input type="password" name="password" id="password">
 <br><br>
-<input type="submit" class="button1" value="Logga in!">
+<input type="submit" class="button2" value="Logga in!">
 <br>
 </form>
 <br><br>

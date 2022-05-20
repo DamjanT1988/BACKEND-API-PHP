@@ -53,7 +53,8 @@ if(!isset($_SESSION['inlogg'])) {
 
 ?>
 <br>
-<h2>Administrera order!</h2>
+<h2>Administrera order nedan!</h2>
+<h3>Lägg in en ny order:</h3>
 <?php
 
 //message if success or fail in adding post
@@ -68,7 +69,7 @@ if(isset($_SESSION['errorlagring'])) {
 ?>
 <!--create form with POST to add post--> 
 
-
+<!--
 <form action="store.php" method="POST" id="content">
 <label for="title">Ange titel för order:</label>
 <br>
@@ -78,15 +79,67 @@ if(isset($_SESSION['errorlagring'])) {
 <br>
 <textarea form="content" name="content" id="content2" rows="10" cols="45"></textarea>
 <br>
-<!--<input type="hidden" name="user" id="user" value="<?= $_COOKIE['Bert']; ?>">-->
+<input type="hidden" name="user" id="user" value="<?= $_COOKIE['Bert']; ?>">
 <br>
 <input type="submit" class="button2" value="Lägg in inlägg">
 </form>
 <br><br>
+-->
 
-           
+<!--create table-->
+<form  name="myform" id="myform">
 
-<h2>Alla order nedan - senast först!</h2>
+<label for="type">Boka bord</label>
+
+<input type="radio" name="radiotype" id="tablenew" value="Table">
+
+<label for="type"> Boka takeaway</label>
+
+<input type="radio" name="radiotype" id="takeawaynew" value="Takeaway">
+<br><br>
+
+<label for="datenew">Vilket datum:</label>
+<br>
+<input type="date" name="datenew" id="datenew" placeholder="ÅÅÅÅ-MM-DD">
+<br><br>
+<label for="timenew">Vilken tid:</label>
+<br>
+<input type="time" name="timenew" id="timenew">
+<br><br>
+<label type="content">Orderinformation:</label>
+<br>
+<input type="text" name="contentnew" id="contentnew">
+<br><br>
+<label for="arrival">Äter på restaurang:</label>
+
+<input type="radio" name="radiotype" id="arrival" value="Restaurangvistelse">
+
+<label for="pickup"> Hämtar på restaurang:</label>
+
+<input type="radio" name="radiotype" id="pickup" value="Hämtar">
+<br><br>
+<label type="cost">Totala orderkostnad (kr):</label>
+<br>
+<input type="number" name="cost" id="cost" pattern="[0-9]">
+<br><br>
+<label type="customername">Kundnamn:</label>
+<br>
+<input type="text" name="customername" id="customername">
+<br><br>
+<label type="customerphone">Kundtelefonnummer:</label>
+<br>
+<input type="text" name="customerphone" id="customerphone">
+<br><br>
+<label type="message">Meddelande från/om kunden:</label>
+<br>
+<input type="text" name="message" id="message">
+<br><br>
+<input type="submit" class="button2" value="Lägg in ny order!">
+<br>
+</form>
+<br><br>           
+
+<h3>Alla order visas nedan - ändra eller ta bort:</h3>
 <?php
 
 //get post & save - USE TRUE AS SECOND PARAMETER
