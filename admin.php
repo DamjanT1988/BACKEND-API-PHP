@@ -93,7 +93,7 @@ if(isset($_SESSION['errorlagring'])) {
 <label for="type">Boka bord</label>
 
 <input type="radio" name="radiotype" id="tablenew" value="Table">
-
+<br>
 <label for="type"> Boka takeaway</label>
 
 <input type="radio" name="radiotype" id="takeawaynew" value="Takeaway">
@@ -109,7 +109,7 @@ if(isset($_SESSION['errorlagring'])) {
 <br><br>
 <label type="content">Orderinformation:</label>
 <br>
-<input type="text" name="contentnew" id="contentnew">
+<textarea form="content" name="contentnew" id="contentnew" rows="10" cols="45"></textarea>
 <br><br>
 <label for="arrival">Äter på restaurang:</label>
 

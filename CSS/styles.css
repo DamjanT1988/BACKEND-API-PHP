@@ -136,6 +136,9 @@ input {
     font-size: 2em;
 }
 
+textarea {
+    font-size: 1.25em;
+}
 input[type='radio'] { 
     transform: scale(2); 
 }
