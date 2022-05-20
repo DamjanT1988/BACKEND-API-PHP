@@ -55,6 +55,7 @@ if(!isset($_SESSION['inlogg'])) {
 <br>
 <h2>Administrera order nedan!</h2>
 <h3>Lägg in en ny order:</h3>
+<p>Orderid skapas automatiskt. Alla nyskapade order får aktivstatus "active".
 <?php
 
 //message if success or fail in adding post
@@ -87,7 +88,7 @@ if(isset($_SESSION['errorlagring'])) {
 -->
 
 <!--create table-->
-<form  name="myform" id="myform">
+<form  name="myform2" id="myform2">
 
 <label for="type">Boka bord</label>
 

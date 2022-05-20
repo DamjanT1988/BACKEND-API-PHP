@@ -1,4 +1,6 @@
-//ADMINSIDAN
+//---ADMINSIDAN---//
+
+//---delete order
 chkDel ();
 
 function chkDel () {
@@ -25,6 +27,59 @@ url2 = "admin.php"
     .then(data => url2)
     //24 catch error
     .catch(err => console.log(err))
+}
+
+//---create order
+
+//25 declare var for DDOM elements
+const codeInput = document.getElementById("code");
+const nameInput = document.getElementById("name");
+const progressionInput = document.getElementById("progression");
+const syllabusInput = document.getElementById("syllabus");
+const submitButton = document.getElementById("submit"); 
+
+//27 create a list item
+function createCourse() {
+    //28 prevent list to add same thing twice
+    event.preventDefault();
+
+    //29 get values from clicked list items/objects
+    let code = codeInput.value;
+    let name = nameInput.value;
+    let progression = progressionInput.value;
+    let syllabus = syllabusInput.value;
+
+    //30 make values to JSON-objects (strings)
+    let jsonString = JSON.stringify({
+        code : code,
+        name : name,
+        progression: progression,
+        syllabus: syllabus    
+    });
+    
+    //31 send data to databas with POST by FETCH
+    fetch (url, {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: jsonString
+    })
+    //32 turn response to JSON
+    .then(response => response.json())
+
+    .then(data => getCourse())
+
+    .then(clearForm())
+}
+
+//33 clear form
+function clearForm() {
+//34clear each form area
+    codeInput.value = "";
+    nameInput.value = "";
+    progressionInput.value = "";
+    syllabusInput.value = "";
 }
 
 
