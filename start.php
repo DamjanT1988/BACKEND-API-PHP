@@ -21,7 +21,7 @@ if(isset($_POST['name'], $_POST['password'])) {
     //cookie for identifying user
     $cookieName = "Bert";
     $cookieValue = $name;
-    setcookie($cookieName, $cookieValue, time() + (600));
+    setcookie($cookieName, $cookieValue, time() + (10000));
     $_COOKIE['Bert'] = $_POST['name'];
 
     //check if user exists & the password
@@ -53,7 +53,7 @@ if(!isset($_SESSION['inlogg'])) {
 <p>Denna sida är ämnad för anställda i företaget "BEST Food 4 You AB". Om du inte har rätt så logga ut omedelbart!</p>
 <p>Vill du administrera order eller menyer klicka på "ORDER" respektive "MENYER". Alla ändringar tillämpas omedelbart</p>
 <p>Behöver du teknisk support kontakter du Damjan på telefonnumret 070-2459369 eller e-mejl dato1700@miun.student.se.</p>
-<p>Endast administratöranvändaren kan nå "ANVÄNDARE"-sidan. Om du 
+<p>Endast administratöranvändaren kan nå "ANVÄNDARE"-sidan. 
 <?php
 include("includes/footer.php");
 ?>

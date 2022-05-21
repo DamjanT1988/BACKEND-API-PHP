@@ -31,6 +31,33 @@ url2 = "admin.php"
 
 //---create order
 
+//let formData = JSON.stringify($("#myform").serializeArray());
+let urlOrder = window.location.pathname;
+let filenameOrder = urlOrder.substring(urlOrder.lastIndexOf('/')+1);//let formData = JSON.stringify($("#myform").serializeArray());
+if(filenameOrder == "admin.php") {
+if(document.getElementById('myform2') == 'myform2'){
+let formOrder = document.getElementById('myform2');
+formOrder.onsubmit = function(event){
+        let xhr = new XMLHttpRequest();
+        let formData2 = new FormData(formOrder);
+        //open the request
+        xhr.open('POST','http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorder=post')
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        //send the form data
+        xhr.send(JSON.stringify(Object.fromEntries(formData2)));
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+               formOrder.reset(); //reset form after AJAX success or do something else
+            }
+        }
+        //Fail the onsubmit to avoid page refresh.
+        return false; }
+    }
+}
+/*
+
 //25 declare var for DDOM elements
 const codeInput = document.getElementById("code");
 const nameInput = document.getElementById("name");
@@ -39,7 +66,7 @@ const syllabusInput = document.getElementById("syllabus");
 const submitButton = document.getElementById("submit"); 
 
 //27 create a list item
-function createCourse() {
+function createOrder() {
     //28 prevent list to add same thing twice
     event.preventDefault();
 
@@ -82,13 +109,19 @@ function clearForm() {
     syllabusInput.value = "";
 }
 
+*/
+
+
+
 
 //REGISTERSIDAN
-//let formData = JSON.stringify($("#myform").serializeArray());
-let form = document.getElementById('myform');
-form.onsubmit = function(event){
+let urlReg = window.location.pathname;
+let filenameReg = urlReg.substring(urlReg.lastIndexOf('/')+1);//let formData = JSON.stringify($("#myform").serializeArray());
+if(filenameReg == "register.php") {
+let formRegister = document.getElementById('myform');
+formRegister.onsubmit = function(){
         let xhr = new XMLHttpRequest();
-        let formData = new FormData(form);
+        let formData = new FormData(formRegister);
         //open the request
         xhr.open('POST','http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idregister=1')
         xhr.setRequestHeader("Content-Type", "application/json");
@@ -98,12 +131,13 @@ form.onsubmit = function(event){
 
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE) {
-                form.reset(); //reset form after AJAX success or do something else
+               formRegister.reset(); //reset form after AJAX success or do something else
             }
         }
         //Fail the onsubmit to avoid page refresh.
-        return false; }
-
+    return false; 
+    }
+}
 //delete user
 chkDelUser ();
 

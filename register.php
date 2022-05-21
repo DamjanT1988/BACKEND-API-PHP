@@ -7,7 +7,7 @@ include("includes/header.php");
 <h2>Registrera nedan!</h2>
 
 <?php
-if(!$_COOKIE['Bert'] == 'admin') {
+if(!$_COOKIE['Bert'] == 'Admin') {
     header("location: start.php");
 }
 ?>
@@ -17,7 +17,7 @@ if(!$_COOKIE['Bert'] == 'admin') {
 
 <label for="namenew">Skriv in användarnamn:</label>
 <br>
-<input type="text" name="namenew" id="namenew" placeholder="namn">
+<input type="text" name="namenew" id="nameneww" placeholder="namn">
 <br>
 <label for="passwordnew">Välj ett starkt lösenord:</label>
 <br>
@@ -25,10 +25,10 @@ if(!$_COOKIE['Bert'] == 'admin') {
 <br>
 <label for="employeeno">Skriv in anställdes anställningsnummer:</label>
 <br>
-<input type="text" name="employeeno" id="employeeno">
+<input type="text" name="employeeno" id="employeeno" placeholder="endast siffror">
 
-<br>
-<input type="submit" class="button1" value="Registrera användarkonto">
+<br><br>
+<input type="submit" class="button2" value="Registrera användarkonto">
 <br>
 </form>
 
@@ -40,7 +40,7 @@ if(isset($_SESSION['errorlagring'])) {
 }
 ?>
 
-<h3>Alla användare registrerade!</h3>
+<h3>Alla användare registrerade nedan: </h3>
 <?php
 
 //get post & save - USE TRUE AS SECOND PARAMETER
