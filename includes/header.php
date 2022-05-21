@@ -19,10 +19,9 @@ include("config.php");
     <div><a class='button1' href='logout.php' id='logout'>Logga ut</a></div>
     <div class="nav">
     <!--menu-->
-    <a class="menynamn" href="start.php">ÖVERSIKT</a>
     <a class="menynamn" href="admin.php">ORDER</a>
     <a class="menynamn" href="menus.php">MENYER</a>
     <a class="menynamn" href="register.php">ANVÄNDARE</a>
-
+    <a class="menynamn" href="start.php">INFORMATION</a>
 
 </div>

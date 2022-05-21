@@ -1,9 +1,9 @@
 //---ADMINSIDAN---//
 
 //---delete order
-chkDel ();
+chkDelOrder ();
 
-function chkDel () {
+function chkDelOrder () {
 let element = document.getElementsByClassName("button1");
 for (let i = 0; i < element.length; i++) {
 element[i].addEventListener("click", deleteOrder);
@@ -24,7 +24,7 @@ url2 = "admin.php"
     //22 make response into JSON data
     .then(response => response.json())
     //23 to getCourse function 
-    .then(data => url2)
+    .then(data => window.location.reload())
     //24 catch error
     .catch(err => console.log(err))
 }
@@ -103,3 +103,32 @@ form.onsubmit = function(event){
         }
         //Fail the onsubmit to avoid page refresh.
         return false; }
+
+//delete user
+chkDelUser ();
+
+function chkDelUser () {
+let element2 = document.getElementsByClassName("button1");
+for (let i = 0; i < element2.length; i++) {
+element2[i].addEventListener("click", deleteUser);
+}
+}
+
+function deleteUser(event) {
+    //20 find id of the list iten
+    let id2 = event.target.id;
+console.log(event.target.id);
+url3 = "http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php";
+url4 = "register.php"
+    //21 send instruction to web service by FETCH
+    //for method of "DELETE" i PHP/REST, by id
+    fetch(url3 + "?iduser=" + id2, {
+        "method": "DELETE" //or "method"
+    })
+    //22 make response into JSON data
+    .then(response => response.json())
+    //23 to getCourse function 
+    .then(data => window.location.reload())
+    //24 catch error
+    .catch(err => console.log(err))
+}

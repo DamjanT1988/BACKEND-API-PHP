@@ -2,9 +2,6 @@
 $page_title = "Administrera";
 include("includes/header.php");
 
-//new content
-$post = new Content();
-
 ?>
 
 <?php
@@ -68,24 +65,7 @@ if(isset($_SESSION['errorlagring'])) {
     unset($_SESSION['errorlagring']);
 }
 ?>
-<!--create form with POST to add post--> 
 
-<!--
-<form action="store.php" method="POST" id="content">
-<label for="title">Ange titel för order:</label>
-<br>
-<input type="text" name="title" id="title">
-<br>
-<label for="content2">Ange innehåll för inlägg:</label>
-<br>
-<textarea form="content" name="content" id="content2" rows="10" cols="45"></textarea>
-<br>
-<input type="hidden" name="user" id="user" value="<?= $_COOKIE['Bert']; ?>">
-<br>
-<input type="submit" class="button2" value="Lägg in inlägg">
-</form>
-<br><br>
--->
 
 <!--create table-->
 <form  name="myform2" id="myform2">
