@@ -58,52 +58,31 @@ if(!isset($_SESSION['inlogg'])) {
 <!--create table-->
 <form  name="formMenu" id="formMenu">
 
-<label for="type">Boka bord</label>
-
-<input type="radio" name="typenew" id="typenew" value="Table">
+<p>Välj kategori för måltid:
 <br>
-
-<label for="type"> Boka takeaway</label>
-
-<input type="radio" name="typenew" value="Takeaway">
-<br><br>
-
-<label for="date">Vilket datum:</label>
+<label for="menunamenew">Förrätt: </label>
+<input type="radio" name="menunamenew" id="menunamenew" value="starter">
 <br>
-<input type="date" name="datenew" id="datenew" placeholder="ÅÅÅÅ-MM-DD">
-<br><br>
-<label for="time">Vilken tid:</label>
+<label for="menunamenew"> Huvudrätt: </label>
+<input type="radio" name="menunamenew" value="main">
 <br>
-<input type="time" name="timenew" id="timenew">
-<br><br>
-<label type="content">Orderinformation:</label>
+<label for="menunamenew"> Efterrätt: </label>
+<input type="radio" name="menunamenew" value="desert">
 <br>
-<textarea form="formOrder" name="contentnew" id="contentnew" rows="10" cols="45"></textarea>
-<br><br>
-<label for="pickuparrival">Äter på restaurang:</label>
-
-<input type="radio" name="pickuparrivalnew" id="pickuparrivalnew" value="Restaurangvistelse">
+<label for="menunamenew"> Dryck: </label>
+<input type="radio" name="menunamenew" value="drink">
 <br>
-<label for="pickuparrival"> Hämtar på restaurang:</label>
-
-<input type="radio" name="pickuparrivalnew" value="Hämtar">
+<label for="menunamenew"> Övrigt: </label>
+<input type="radio" name="menunamenew" value="drink">
 
 <br><br>
-<label type="cost">Totala orderkostnad (kr):</label>
+<label for="itemnamenew">Namn på objekt:</label>
 <br>
-<input type="number" name="costnew" id="costnew" pattern="[0-9]">
+<input type="text" name="itemnamenew" id="itemnamenew">
 <br><br>
-<label type="customername">Kundnamn:</label>
+<label type="pricenew">Pris per objekt (inkl. moms, i kr):</label>
 <br>
-<input type="text" name="customernamenew" id="customernamenew">
-<br><br>
-<label type="customerphone">Kundtelefonnummer:</label>
-<br>
-<input type="number" name="customerphonenew" id="customerphonenew" placeholder="Endast siffror" pattern="[0-9]">
-<br><br>
-<label type="message">Meddelande från/om kunden:</label>
-<br>
-<input type="text" name="messagenew" id="messagenew">
+<input type="number" name="pricenew" id="pricenew" pattern="[0-9]">
 <br><br>
 <input type="submit" class="button2" value="Lägg in ny order!">
 <br>
@@ -125,7 +104,7 @@ foreach($postlist as $key=>$pl) {
     echo "<p><b>Pris (inkl. moms):</b> " . $pl['price'] . " kr</p>";
     echo "<p><b>Skapad:</b> " . $pl['created'] . "</p>";
     echo "<br><a class='button3'id='" . $pl['id'] . "'>RADERA</a>";
-    echo "<a class='button2' href='menuchange.php?idorderno=" . $pl['id'] . "'>ÄNDRA</a>" . "<br><br><hr>";
+    echo "<a class='button2' href='menuchange.php?idmenuno=" . $pl['id'] . "'>ÄNDRA</a>" . "<br><br><hr>";
 }
 ?>
 

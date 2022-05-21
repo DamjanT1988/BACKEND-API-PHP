@@ -3,8 +3,8 @@ $page_title = "Redigera";
 include("includes/header.php");
 
 //get id from URL
-if(isset($_GET['idorderno'])) {
-    $id = $_GET['idorderno'];
+if(isset($_GET['idmenuno'])) {
+    $id = $_GET['idmenuno'];
 $details = json_decode(file_get_contents("http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorderno=$id"), true);
 
 } 
