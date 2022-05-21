@@ -89,7 +89,7 @@ if(!isset($_SESSION['inlogg'])) {
 </form>
 <br><br>           
 
-<h3>Alla order visas nedan - ändra eller ta bort:</h3>
+<h3>Alla menyobjekt visas nedan - ändra eller ta bort:</h3>
 <?php
 
 //get post & save - USE TRUE AS SECOND PARAMETER
