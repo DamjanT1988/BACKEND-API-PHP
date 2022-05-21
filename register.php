@@ -13,7 +13,7 @@ if(!$_COOKIE['Bert'] == 'Admin') {
 ?>
 
 <!--create table-->
-<form  action="register.php" name="myform" id="myform">
+<form name="formRegister" id="formRegister">
 
 <label for="name">Skriv in användarnamn:</label>
 <br>

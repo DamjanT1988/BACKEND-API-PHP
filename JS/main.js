@@ -35,7 +35,7 @@ url2 = "admin.php"
 let urlOrder = window.location.pathname;
 let filenameOrder = urlOrder.substring(urlOrder.lastIndexOf('/')+1);//let formData = JSON.stringify($("#myform").serializeArray());
 if(filenameOrder == "admin.php") {
-let formOrder = document.getElementById('myform2');
+let formOrder = document.getElementById('formOrder');
 formOrder.onsubmit = function(event){
         let xhr = new XMLHttpRequest();
         let formData2 = new FormData(formOrder);
@@ -49,6 +49,32 @@ formOrder.onsubmit = function(event){
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE) {
                formOrder.reset(); //reset form after AJAX success or do something else
+                window.location.reload();
+            }
+        }
+        //Fail the onsubmit to avoid page refresh.
+        return false; }
+    }
+
+//---update order
+    //let formData = JSON.stringify($("#myform").serializeArray());
+let urlOrderUp = window.location.pathname;
+let filenameOrderUp = urlOrderUp.substring(urlOrderUp.lastIndexOf('/')+1);//let formData = JSON.stringify($("#myform").serializeArray());
+if(filenameOrderUp == "change.php") {
+let formOrderUp = document.getElementById('formUpdate');
+formOrderUp.onsubmit = function(event){
+        let xhr = new XMLHttpRequest();
+        let formData3 = new FormData(formOrderUp);
+        //open the request
+        xhr.open('PUT','http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorder=put')
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        //send the form data
+        xhr.send(JSON.stringify(Object.fromEntries(formData3)));
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+               formOrderUp.reset(); //reset form after AJAX success or do something else
                 window.location.reload();
             }
         }
@@ -118,7 +144,7 @@ function clearForm() {
 let urlReg = window.location.pathname;
 let filenameReg = urlReg.substring(urlReg.lastIndexOf('/')+1);//let formData = JSON.stringify($("#myform").serializeArray());
 if(filenameReg == "register.php") {
-let formRegister = document.getElementById('myform');
+let formRegister = document.getElementById('formRegister');
 formRegister.onsubmit = function(){
         let xhr = new XMLHttpRequest();
         let formData = new FormData(formRegister);
@@ -132,6 +158,7 @@ formRegister.onsubmit = function(){
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE) {
                formRegister.reset(); //reset form after AJAX success or do something else
+               window.location.reload();
             }
         }
         //Fail the onsubmit to avoid page refresh.
