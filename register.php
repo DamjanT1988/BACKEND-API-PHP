@@ -13,19 +13,19 @@ if(!$_COOKIE['Bert'] == 'Admin') {
 ?>
 
 <!--create table-->
-<form  name="myform" id="myform">
+<form  action="register.php" name="myform" id="myform">
 
-<label for="namenew">Skriv in användarnamn:</label>
+<label for="name">Skriv in användarnamn:</label>
 <br>
 <input type="text" name="namenew" id="nameneww" placeholder="namn">
 <br>
-<label for="passwordnew">Välj ett starkt lösenord:</label>
+<label for="password">Välj ett starkt lösenord:</label>
 <br>
 <input type="password" name="passwordnew" id="passwordnew" placeholder="lösenord">
 <br>
 <label for="employeeno">Skriv in anställdes anställningsnummer:</label>
 <br>
-<input type="text" name="employeeno" id="employeeno" placeholder="endast siffror">
+<input type="number" name="employeeno" id="employeeno" placeholder="endast siffror" pattern="[0-9]">
 
 <br><br>
 <input type="submit" class="button2" value="Registrera användarkonto">

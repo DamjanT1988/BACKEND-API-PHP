@@ -35,7 +35,6 @@ url2 = "admin.php"
 let urlOrder = window.location.pathname;
 let filenameOrder = urlOrder.substring(urlOrder.lastIndexOf('/')+1);//let formData = JSON.stringify($("#myform").serializeArray());
 if(filenameOrder == "admin.php") {
-if(document.getElementById('myform2') == 'myform2'){
 let formOrder = document.getElementById('myform2');
 formOrder.onsubmit = function(event){
         let xhr = new XMLHttpRequest();
@@ -50,12 +49,13 @@ formOrder.onsubmit = function(event){
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE) {
                formOrder.reset(); //reset form after AJAX success or do something else
+                window.location.reload();
             }
         }
         //Fail the onsubmit to avoid page refresh.
         return false; }
     }
-}
+
 /*
 
 //25 declare var for DDOM elements

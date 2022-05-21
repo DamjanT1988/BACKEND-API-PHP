@@ -72,7 +72,7 @@ if(isset($_SESSION['errorlagring'])) {
 
 <label for="type">Boka bord</label>
 
-<input type="radio" name="type" id="Table" value="Table">
+<input type="radio" name="typenew" id="typenew" value="Table">
 <br>
 <!--
 <label for="type"> Boka takeaway</label>
@@ -82,19 +82,19 @@ if(isset($_SESSION['errorlagring'])) {
 -->
 <label for="date">Vilket datum:</label>
 <br>
-<input type="date" name="date" id="datenew" placeholder="ÅÅÅÅ-MM-DD">
+<input type="date" name="datenew" id="datenew" placeholder="ÅÅÅÅ-MM-DD">
 <br><br>
 <label for="time">Vilken tid:</label>
 <br>
-<input type="time" name="time" id="timenew">
+<input type="time" name="timenew" id="timenew">
 <br><br>
 <label type="content">Orderinformation:</label>
 <br>
-<textarea form="content" name="content" id="contentnew" rows="10" cols="45"></textarea>
+<textarea form="myform2" name="contentnew" id="contentnew" rows="10" cols="45"></textarea>
 <br><br>
 <label for="pickuparrival">Äter på restaurang:</label>
 
-<input type="radio" name="pickuparrival" id="arrival" value="Restaurangvistelse">
+<input type="radio" name="pickuparrivalnew" id="pickuparrivalnew" value="Restaurangvistelse">
 <br>
 <!--<label for="pickuparrival"> Hämtar på restaurang:</label>
 
@@ -103,19 +103,19 @@ if(isset($_SESSION['errorlagring'])) {
 <br><br>
 <label type="cost">Totala orderkostnad (kr):</label>
 <br>
-<input type="number" name="cost" id="cost" pattern="[0-9]">
+<input type="number" name="costnew" id="costnew" pattern="[0-9]">
 <br><br>
 <label type="customername">Kundnamn:</label>
 <br>
-<input type="text" name="customername" id="customername">
+<input type="text" name="customernamenew" id="customernamenew">
 <br><br>
 <label type="customerphone">Kundtelefonnummer:</label>
 <br>
-<input type="text" name="customerphone" id="customerphone" placeholder="Endast siffror">
+<input type="number" name="customerphonenew" id="customerphonenew" placeholder="Endast siffror" pattern="[0-9]">
 <br><br>
 <label type="message">Meddelande från/om kunden:</label>
 <br>
-<input type="text" name="message" id="message">
+<input type="text" name="messagenew" id="messagenew">
 <br><br>
 <input type="submit" class="button2" value="Lägg in ny order!">
 <br>
