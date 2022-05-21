@@ -6,18 +6,11 @@ include("includes/header.php");
 if(isset($_GET['idorderno'])) {
     $id = $_GET['idorderno'];
 $details = json_decode(file_get_contents("http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorderno=$id"), true);
-var_dump($details);
+
 } 
 else {
     header('location: admin.php');
 }
-
-//delete post by id in URL
-if(isset($_GET['deleteid'])) {
-    $id = $_GET['deleteid'];
-    if($post->deletePostById($id)) {
-    header("location: admin.php");
-}}
 
 ?>
 
@@ -87,8 +80,9 @@ if(isset($_SESSION['errorlagring'])) {
 <input type="hidden" name="idnew" id="idnew" value="<?= $details['id']; ?>">
 <br><br>
 <input type="submit" class="button2" value="Uppdatera order!">
-<br>
+
 </form>
+<br><a href="admin.php" class='button1'id='<?= $details['id']; ?>'>RADERA ORDER</a>
 <br><br> 
 
 <?php

@@ -161,6 +161,15 @@ input[type='radio'] {
     float: left;
 }
 
+.button3 {
+    font-size: 1em;
+    background-color: black;
+    color: white;
+    padding: 1%;
+    text-decoration: none;
+    float: right;
+}
+
 .menu {
     font-size: 1.5em;
     padding-bottom: 10%;

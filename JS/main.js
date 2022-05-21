@@ -82,63 +82,35 @@ formOrderUp.onsubmit = function(event){
         return false; }
     }
 
-/*
+//MENYSIDEN
+//---delete order
+chkDelMenu ();
 
-//25 declare var for DDOM elements
-const codeInput = document.getElementById("code");
-const nameInput = document.getElementById("name");
-const progressionInput = document.getElementById("progression");
-const syllabusInput = document.getElementById("syllabus");
-const submitButton = document.getElementById("submit"); 
+function chkDelMenu () {
+let element = document.getElementsByClassName("button3");
+for (let i = 0; i < element.length; i++) {
+element[i].addEventListener("click", deleteMenuItem);
+}
+}
 
-//27 create a list item
-function createOrder() {
-    //28 prevent list to add same thing twice
-    event.preventDefault();
-
-    //29 get values from clicked list items/objects
-    let code = codeInput.value;
-    let name = nameInput.value;
-    let progression = progressionInput.value;
-    let syllabus = syllabusInput.value;
-
-    //30 make values to JSON-objects (strings)
-    let jsonString = JSON.stringify({
-        code : code,
-        name : name,
-        progression: progression,
-        syllabus: syllabus    
-    });
-    
-    //31 send data to databas with POST by FETCH
-    fetch (url, {
-        method: "POST",
-        headers: {
-            "content-type": "application/json"
-        },
-        body: jsonString
+function deleteMenuItem(event) {
+    //20 find id of the list iten
+    let id = event.target.id;
+console.log(event.target.id);
+url = "http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php";
+url2 = "menu.php"
+    //21 send instruction to web service by FETCH
+    //for method of "DELETE" i PHP/REST, by id
+    fetch(url + "?idmenu=" + id, {
+        "method": "DELETE" //or "method"
     })
-    //32 turn response to JSON
+    //22 make response into JSON data
     .then(response => response.json())
-
-    .then(data => getCourse())
-
-    .then(clearForm())
+    //23 to getCourse function 
+    .then(data => window.location.reload())
+    //24 catch error
+    .catch(err => console.log(err))
 }
-
-//33 clear form
-function clearForm() {
-//34clear each form area
-    codeInput.value = "";
-    nameInput.value = "";
-    progressionInput.value = "";
-    syllabusInput.value = "";
-}
-
-*/
-
-
-
 
 //REGISTERSIDAN
 let urlReg = window.location.pathname;
