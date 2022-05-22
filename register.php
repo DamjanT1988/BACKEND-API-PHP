@@ -7,9 +7,13 @@ include("includes/header.php");
 <h2>Registrera nedan!</h2>
 
 <?php
-if(!$_COOKIE['Bert'] == 'Admin') {
+//control if admin logged in
+if($_COOKIE['User'] == 'Admin') {
+
+} else {
     header("location: start.php");
 }
+
 ?>
 
 <!--create table-->
@@ -18,18 +22,18 @@ if(!$_COOKIE['Bert'] == 'Admin') {
 <label for="name">Skriv in användarnamn:</label>
 <br>
 <input type="text" name="namenew" id="nameneww" placeholder="namn">
-<br>
+<br><br>
 <label for="password">Välj ett starkt lösenord:</label>
 <br>
 <input type="password" name="passwordnew" id="passwordnew" placeholder="lösenord">
-<br>
+<br><br>
 <label for="employeeno">Skriv in anställdes anställningsnummer:</label>
 <br>
 <input type="number" name="employeeno" id="employeeno" placeholder="endast siffror" pattern="[0-9]">
 
 <br><br>
 <input type="submit" class="button2" value="Registrera användarkonto">
-<br>
+<br><br><br>
 </form>
 
 <?php

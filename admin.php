@@ -6,8 +6,6 @@ include("includes/header.php");
 
 <?php
 
-//new instance of user
-$user = new User();
 
 //check POST & save in variables
 if(isset($_POST['name'], $_POST['password'])) {
@@ -20,20 +18,22 @@ if(isset($_POST['name'], $_POST['password'])) {
 
     if(!($name == "" || $password == "")) {
     //cookie for identifying user
-    $cookieName = "Bert";
+    $cookieName = "User";
     $cookieValue = $name;
     setcookie($cookieName, $cookieValue, time() + (600));
-    $_COOKIE['Bert'] = $_POST['name'];
-
+    $_COOKIE['User'] = $_POST['name'];
+    
+    
+    var_dump($_COOKIE['User']);
     //check if user exists & the password
-    if($user->checkUser($name, $password)) {
+    if(file_get_contents("http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idusername=$name&idpassword=$password")) {
         //print hello message if exits
-        //echo "<p>Välkommen " . $name . "!</p>";
+        echo "<strong>Välkommen " . $name . "!</strong>";
         $_SESSION['inlogg'] = ""; 
     } else {
        $_SESSION['errorinlogg'] = "Fel inloggningsuppgifter";
         //destroy cookie
-        setcookie("Bert", "", time() - 3600);
+       setcookie("User", "", time() - 3600);
         //header("location: logout.php");
 
     } 

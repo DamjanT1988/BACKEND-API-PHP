@@ -1,15 +1,12 @@
-# Damjans projekt
-Kurs: DT093G - Webbutveckling II
-## Uppgift
-Det som ska göras i momentet är..
-1. Utveckla en webbplats som är en bloggportal
-2. Använd SQL-databas för inlogg & inlägg
-3. Skriv rapport
-## Programkod
-Koden är strukturerad i flera delar med mappar:
-* classes
-* CSS
-* includes
-* pictures
+# PROJEKT - ADMIN-UI
+Syftet med webbtjänsten är att:
+* skapa en REST-baserads webbtjänst
+* bekanta sig med relevanta begrepp & förstå hur att använda dessa
+* använda Fetch-API i att konsumera en webbtjänst
+* skapa en webbtjänst med PHP med objektorientering med SQL
 
-De PHP-filer som används finns i root-mappen. Det finns 17 filer sammanlagt inklusice CSS-filen.
+## ADMIN-UI
+
+
+## LÄNKAR
+Public länk till webbtjänst:

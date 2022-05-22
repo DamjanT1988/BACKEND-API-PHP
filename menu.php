@@ -3,52 +3,6 @@ $page_title = "Administrera";
 include("includes/header.php");
 
 ?>
-
-<?php
-
-//new instance of user
-$user = new User();
-
-//check POST & save in variables
-if(isset($_POST['name'], $_POST['password'])) {
-    $name = $_POST['name'];
-    $name = htmlentities($name, ENT_QUOTES, 'UTF-8');
-    $name = strip_tags($name);
-    $password = $_POST['password'];
-    $password = htmlentities($password, ENT_QUOTES, 'UTF-8');
-    $password = strip_tags($password);
-
-    if(!($name == "" || $password == "")) {
-    //cookie for identifying user
-    $cookieName = "Bert";
-    $cookieValue = $name;
-    setcookie($cookieName, $cookieValue, time() + (600));
-    $_COOKIE['Bert'] = $_POST['name'];
-
-    //check if user exists & the password
-    if($user->checkUser($name, $password)) {
-        //print hello message if exits
-        //echo "<p>Välkommen " . $name . "!</p>";
-        $_SESSION['inlogg'] = ""; 
-    } else {
-       $_SESSION['errorinlogg'] = "Fel inloggningsuppgifter";
-        //destroy cookie
-        setcookie("Bert", "", time() - 3600);
-        //header("location: logout.php");
-
-    } 
-    } else {
-    $_SESSION['errorinlogg'] = "Fel inloggningsuppgifter";
-} 
-}
-
-//check if not logged in
-if(!isset($_SESSION['inlogg'])) {
-    header("location: login.php");
-} else
-
-
-?>
 <br>
 <h2>Administrera menyer nedan!</h2>
 <h3>Lägg in en ny menuobjekt:</h3>
@@ -85,7 +39,7 @@ if(!isset($_SESSION['inlogg'])) {
 <br>
 <input type="number" name="pricenew" id="pricenew" pattern="[0-9]">
 <br><br>
-<input type="submit" class="button2" value="Lägg in ny order!">
+<input type="submit" class="button2" value="Lägg in nytt menyobjekt!">
 <br>
 </form>
 <br><br>           
