@@ -9,7 +9,7 @@ $details = json_decode(file_get_contents("http://localhost/projekt_webservice_vt
 
 } 
 else {
-    header('location: admin.php');
+    header('location: menu.php');
 }
 
 ?>
@@ -23,22 +23,22 @@ else {
 <label for="type">Kategori:</label>
 <br>
 <input type="text" name="menunamenew" id="menunamenew" value="<?= $details['menu_name']; ?>">
-<br>
+<br><br>
 <label for="type">Objektnamn:</label>
 <br>
 <input type="text" name="itemnamenew" id="itemnamenew" value="<?= $details['item_name']; ?>">
-<br>
-
+<br><br>
 <label type="price">Pris per objekt (inkl. moms, i kr):</label>
 <br>
 <input type="number" name="pricenew" id="pricenew" pattern="[0-9]" value="<?= $details['price']; ?>">
 <br><br>
 <input type="hidden" name="idnew" id="idnew" value="<?= $details['id']; ?>">
-<br><br>
+<br>
 <input type="submit" class="button2" value="Uppdatera menyobjekt!">
-
+<br><br>
+<div id="message"></div>
 </form>
-<br><a href="menu.php" class='button1'id='<?= $details['id']; ?>'>UPPDATERA MENUOBJEKT</a>
+<br><a href="menu.php" class='button3'id='<?= $details['id']; ?>'>RADERA MENUOBJEKT</a>
 <br><br> 
 
 <?php

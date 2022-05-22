@@ -74,8 +74,7 @@ formOrderUp.onsubmit = function(event){
 
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE) {
-               formOrderUp.reset(); //reset form after AJAX success or do something else
-                window.location.reload();
+                document.getElementById('message').innerHTML = "Uppdaterad!";
             }
         }
         //Fail the onsubmit to avoid page refresh.
@@ -109,6 +108,34 @@ formMenu.onsubmit = function(event){
         //Fail the onsubmit to avoid page refresh.
         return false; }
     }
+
+//---update menu object
+    //let formData = JSON.stringify($("#myform").serializeArray());
+    let urlMenuUp = window.location.pathname;
+    let filenameMenuUp = urlMenuUp.substring(urlMenuUp.lastIndexOf('/')+1);//let formData = JSON.stringify($("#myform").serializeArray());
+    console.log(filenameMenuUp);
+    if(filenameMenuUp == "menuchange.php") {
+    let formMenuUp = document.getElementById('formMenuUpdate');
+    formMenuUp.onsubmit = function(event){
+            let xhr = new XMLHttpRequest();
+            let formData3 = new FormData(formMenuUp);
+            //open the request
+            xhr.open('PUT','http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idmenu=put')
+            xhr.setRequestHeader("Content-Type", "application/json");
+    
+            //send the form data
+            xhr.send(JSON.stringify(Object.fromEntries(formData3)));
+    
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    
+                    document.getElementById('message').innerHTML = "Uppdaterad!";
+                }
+            }
+            //Fail the onsubmit to avoid page refresh.
+            return false; }
+        }
+
 
 //---delete menu object
 chkDelMenu ();
