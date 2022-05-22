@@ -66,7 +66,7 @@ if(isset($_SESSION['errorlagring'])) {
 }
 ?>
 
-
+<div id="wrapperform">
 <!--create table-->
 <form  name="formOrder" id="formOrder">
 
@@ -121,7 +121,7 @@ if(isset($_SESSION['errorlagring'])) {
 <br>
 </form>
 <br><br>           
-
+<div>
 <h3>Alla order visas nedan - ändra eller ta bort:</h3>
 <?php
 

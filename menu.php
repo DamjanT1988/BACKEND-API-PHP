@@ -56,6 +56,7 @@ if(!isset($_SESSION['inlogg'])) {
 
 
 <!--create table-->
+<div id="wrapperform">
 <form  name="formMenu" id="formMenu">
 
 <p>Välj kategori för måltid:
@@ -88,7 +89,7 @@ if(!isset($_SESSION['inlogg'])) {
 <br>
 </form>
 <br><br>           
-
+<div>
 <h3>Alla menyobjekt visas nedan - ändra eller ta bort:</h3>
 <?php
 

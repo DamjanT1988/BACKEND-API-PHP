@@ -1,5 +1,5 @@
 body {
-    background-color: #666;
+    background-color: #be805f;
     font-family: Arial, sans-serif;
 }
 
@@ -38,7 +38,7 @@ body {
     border: solid 2px;
     text-decoration: none;
 }
-
+/*
 #mainmenu {
     float: left;
     font-size: 1.5em;
@@ -47,11 +47,15 @@ body {
     border: solid #eb0808;
     border-width: 10px;
     margin-right: 5%;
-}
+}*/
 
 img {
     float: none;
-    max-width: 12%;
+    width: 12%;
+}
+
+#banner {
+    width: 100%;
 }
 
 #textner {
@@ -59,7 +63,7 @@ img {
     position: relative;
     font-size: 0.95em;
 }
-
+/*
 .current {
     border-bottom: solid 8px #4567cc;
 }
@@ -70,6 +74,7 @@ div.postmain {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+*/
 
 /*LÄNKAR*/
 
@@ -80,7 +85,7 @@ a {
 
 a:hover {
     color: #000;
-    background-color: #ece408;
+    background-color: red;
 }
 
 a.topptextlink {
@@ -103,6 +108,7 @@ hr {
     margin-top: 0%;
 }
 
+/*
 .bildprodukt-prodsida {
     max-width: 330px;
 }
@@ -121,16 +127,19 @@ hr {
     background-color: white;
     max-width: 66%;
 }
+*/
 
+
+/*FORMULÄR*/
 form {
     font-size: 1.5em;
     line-height: 1.5em;
     font-weight: bold;
 }
-
+/*
 #todo {
     font-size: 0.75em;
-}
+}*/
 
 input {
     font-size: 2em;
@@ -170,10 +179,11 @@ input[type='radio'] {
     float: right;
 }
 
+/*
 .menu {
     font-size: 1.5em;
     padding-bottom: 10%;
-}
+}*/
 
 /*RUBRIKER*/
 h1 {
@@ -186,6 +196,7 @@ h1 {
 
 h2 {
     font-size: 3em;
+    line-height: 1.25em;
 }
 
 h3 {
@@ -200,10 +211,10 @@ p {
 }
 
 /*SIDFOT*/
-#mainfooter {
+footer {
     display: inline-block;
     width: 100%;
-    background-color: #4567cc;
+    background-color: #be805f;
     color: #ffffff;
     position: relative;
     text-align: center;
@@ -216,15 +227,35 @@ p {
 /*MEDIA QUERY FÖR SURFPLATTA*/
 @media only screen and (min-width: 551px) and (max-width: 860px) {}
 
+/*FORM*/
+form {
+    font-size: 1.35em;
+    line-height: 1.6em;
+    font-weight: bold;
+    width: 100%;
+}
+
+
+input {
+    font-size: 1.6em;
+}
+
+textarea {
+    font-size: 1.3em;
+}
+
+#wrapperform {
+    width: 100%;
+}
+Textarea {
+    max-width: 350px;
+}
+
+
 /*MEDIA QUERY FÖR MOBILTELEFON*/
 @media only screen and (max-width: 550px) and (orientation: portrait) {
     body {
-        background-color: white;
-    }
-
-    img {
-        float: none;
-        max-width: 40%;
+        background-color: #be805f;
     }
 
     #wrapper1 {
@@ -235,8 +266,12 @@ p {
         padding-top: 1%;
     }
 
+    #logo {
+        width: 18%;
+    }
+
     .menynamn {
-        background-color: #4567cc;
+        background-color: #be805f;
         padding: 1%;
         font-size: 0.9em;
         float: left;
@@ -245,15 +280,41 @@ p {
         border: solid 2px;
         text-decoration: none;
     }
+    /*
     div.postmain {
         width: 100%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }    
+*/
 
+
+/*FORM*/
+form {
+    font-size: 1.25em;
+    line-height: 1.5em;
+    font-weight: bold;
+    width: 100%;
+}
+/*
+#todo {
+    font-size: 0.75em;
+}*/
+
+input {
+    font-size: 1.4em;
+}
+
+textarea {
+    font-size: 1em;
+}
+
+#wrapperform {
+    width: 100%;
+}
 Textarea {
-    max-width: 450px;
+    max-width: 350px;
 }
 
 /*RUBRIKER*/
@@ -274,19 +335,6 @@ Textarea {
     p {
         font-size: 1.35em;
         line-height: 1.35em;
-    }
-
-/*SIDFOT*/
-    #mainfooter {
-        display: inline-block;
-        width: 100%;
-        background-color: #4567cc;
-        position: relative;
-        text-align: center;
-        font-size: 1em;
-        line-height: 1.5em;
-        margin: 0%;
-        margin-top: 5%;
     }
 
 }

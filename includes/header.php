@@ -14,9 +14,9 @@ include("config.php");
 <body>
     <div id="wrapper1">
     <div id="container">
-    <a href="index.php"><img src="pictures/logotyp.svg" alt="logotyp"></a>
+    <a href="admin.php"><img src="pictures/logotyp.svg" id="logo" alt="logotyp"></a>
     <h1>ADMINSIDA!</h1>
-    <div><a class='button1' href='logout.php' id='logout'>Logga ut</a></div>
+    <div><a class='button1' href='logout.php' class='logout'>Logga ut</a></div>
     <div class="nav">
     <!--menu-->
     <a class="menynamn" href="admin.php">ORDER</a>
