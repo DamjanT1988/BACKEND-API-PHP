@@ -52,7 +52,7 @@ if(!isset($_SESSION['inlogg'])) {
 <br>
 <h2>Administrera order nedan!</h2>
 <h3>Lägg in en ny order:</h3>
-<p>Orderid skapas automatiskt. Alla nyskapade order får aktivstatus "active".
+<p>Orderid skapas automatiskt. Alla nyskapade order får aktivstatus "active". För att söka bland order, tryck ctrl + F & skriv in sökord.</p>
 <?php
 
 //message if success or fail in adding post

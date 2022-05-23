@@ -6,7 +6,7 @@ include("includes/header.php");
 <br>
 <h2>Administrera menyer nedan!</h2>
 <h3>Lägg in en ny menuobjekt:</h3>
-<p>Menyid skapas automatiskt.</p>
+<p>Menyid skapas automatiskt. För att söka bland order, tryck ctrl + F & skriv in sökord.</p>
 
 
 <!--create table-->
@@ -59,7 +59,6 @@ foreach($postlist as $key=>$pl) {
     echo "<p><b>Pris (inkl. moms):</b> " . $pl['price'] . " kr</p>";
     echo "<p><b>Skapad:</b> " . $pl['created'] . "</p>";
     echo "<br><a class='button3'id='" . $pl['id'] . "'>RADERA</a>";
-    echo "<a class='button2' href='menuchange.php?idmenuno=" . $pl['id'] . "'>ÄNDRA</a>" . "<br><br><hr>";
 }
 ?>
 

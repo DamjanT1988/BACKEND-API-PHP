@@ -225,3 +225,35 @@ function deleteUser(event) {
         //catch error
         .catch(err => console.log(err))
 }
+
+
+
+/*---CONTACT---*/
+
+//---delete contact object
+chkDelContact();
+
+function chkDelContact() {
+    let element7 = document.getElementsByClassName("button4");
+    for (let i = 0; i < element7.length; i++) {
+        element7[i].addEventListener("click", deleteContactItem);
+    }
+}
+
+function deleteContactItem(event) {
+    //find id of the list iten
+    let id10 = event.target.id;
+    url7 = "http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php";
+    url27 = "contact.php"
+    //send instruction to web service by FETCH
+    //for method of "DELETE" i PHP/REST, by id
+    fetch(url7 + "?idcontact=" + id10, {
+        "method": "DELETE" //or "method"
+    })
+        //make response into JSON data
+        .then(response => response.json())
+        //reload 
+        .then(data => window.location.reload())
+        //catch error
+        .catch(err => console.log(err))
+}

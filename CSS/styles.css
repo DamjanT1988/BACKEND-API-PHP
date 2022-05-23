@@ -136,10 +136,6 @@ form {
     line-height: 1.5em;
     font-weight: bold;
 }
-/*
-#todo {
-    font-size: 0.75em;
-}*/
 
 input {
     font-size: 2em;
@@ -152,7 +148,7 @@ input[type='radio'] {
     transform: scale(2); 
 }
 
-.button1 {
+.button1, .button3, .button4 {
     font-size: 1em;
     background-color: black;
     color: white;
@@ -170,20 +166,6 @@ input[type='radio'] {
     float: left;
 }
 
-.button3 {
-    font-size: 1em;
-    background-color: black;
-    color: white;
-    padding: 1%;
-    text-decoration: none;
-    float: right;
-}
-
-/*
-.menu {
-    font-size: 1.5em;
-    padding-bottom: 10%;
-}*/
 
 /*RUBRIKER*/
 h1 {
