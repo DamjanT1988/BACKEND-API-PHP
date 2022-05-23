@@ -1,6 +1,12 @@
 <?php
 $page_title = "Översikt";
 include("includes/header.php");
+
+//check if logged in visitor; else login
+if(!isset($_COOKIE['User'])){
+    header("location: login.php");
+}
+
 ?>
 
 <br>

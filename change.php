@@ -2,6 +2,11 @@
 $page_title = "Redigera";
 include("includes/header.php");
 
+//check if logged in visitor; else login
+if(!isset($_COOKIE['User'])){
+    header("location: login.php");
+}
+
 //get id from URL
 if(isset($_GET['idorderno'])) {
     $id = $_GET['idorderno'];

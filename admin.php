@@ -24,7 +24,7 @@ if(isset($_POST['name'], $_POST['password'])) {
     $_COOKIE['User'] = $_POST['name'];
     
     
-    var_dump($_COOKIE['User']);
+
     //check if user exists & the password
     if(file_get_contents("http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idusername=$name&idpassword=$password")) {
         //print hello message if exits

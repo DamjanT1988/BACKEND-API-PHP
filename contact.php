@@ -2,6 +2,12 @@
 $page_title = "Administrera";
 include("includes/header.php");
 
+
+//check if logged in visitor; else login
+if(!isset($_COOKIE['User'])){
+    header("location: login.php");
+}
+
 ?>
 <br>
 <h2>Administrera frågor nedan!</h2>
