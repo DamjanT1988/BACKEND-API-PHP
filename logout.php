@@ -6,4 +6,4 @@ session_destroy();
 header("location: login.php");
 
 //destroy cookie
-setcookie("Bert", "", time() - 3600);
+setcookie("User", "", time() - 3600);
