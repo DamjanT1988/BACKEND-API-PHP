@@ -1,3 +1,5 @@
+//PROGRAMMER: DAMJAN TOSIC, DATO1700@MIUN.STUDENT.SE
+
 //---ADMINSIDAN---//
 
 //---delete order

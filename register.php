@@ -1,3 +1,4 @@
+<!--PROGRAMMER: DAMJAN TOSIC, DATO1700@MIUN.STUDENT.SE-->
 <?php
 $page_title = "Registrera";
 include("includes/header.php");

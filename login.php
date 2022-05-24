@@ -1,4 +1,4 @@
-
+<!--PROGRAMMER: DAMJAN TOSIC, DATO1700@MIUN.STUDENT.SE-->
 <?php
 $page_title = "Logga in";
 include("includes/config.php");
