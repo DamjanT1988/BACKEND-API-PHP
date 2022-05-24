@@ -42,7 +42,7 @@ if($_COOKIE['User'] == 'Admin') {
 <?php
 
 //get post & save - USE TRUE AS SECOND PARAMETER
-$postlist = json_decode(file_get_contents('http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?iduser=all'), true);
+$postlist = json_decode(file_get_contents('http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php?iduser=all'), true);
 
 //ÄNDRA LÄNK INNAN INLÄMNING
 

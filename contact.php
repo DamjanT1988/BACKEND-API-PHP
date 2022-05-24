@@ -17,7 +17,7 @@ if(!isset($_COOKIE['User'])){
 <?php
 
 //get post & save - USE TRUE AS SECOND PARAMETER
-$postlist = json_decode(file_get_contents('http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idcontact=get'), true);
+$postlist = json_decode(file_get_contents('http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idcontact=get'), true);
 
 
 foreach($postlist as $key=>$pl) {

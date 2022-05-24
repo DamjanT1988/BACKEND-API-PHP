@@ -20,7 +20,7 @@ function chkDelOrder() {
 function deleteOrder(event) {
     // find id of the list iten
     let id = event.target.id;
-    url = "http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php";
+    url = "http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php";
     url2 = "admin.php"
     //send instruction to web service by FETCH
     //for method of "DELETE" i PHP/REST, by id
@@ -48,7 +48,7 @@ if (filenameOrder == "admin.php") {
         let xhr = new XMLHttpRequest();
         let formData2 = new FormData(formOrder);
         //open the request
-        xhr.open('POST', 'http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorder=post')
+        xhr.open('POST', 'http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorder=post')
         xhr.setRequestHeader("Content-Type", "application/json");
 
         //send the form data
@@ -75,7 +75,7 @@ if (filenameOrderUp == "change.php") {
         let xhr = new XMLHttpRequest();
         let formData3 = new FormData(formOrderUp);
         //open the request
-        xhr.open('PUT', 'http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorder=put')
+        xhr.open('PUT', 'http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorder=put')
         xhr.setRequestHeader("Content-Type", "application/json");
 
         //send the form data
@@ -101,7 +101,7 @@ if (filenameMenu == "menu.php") {
         let xhr = new XMLHttpRequest();
         let formData2 = new FormData(formMenu);
         //open the request
-        xhr.open('POST', 'http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idmenu=post')
+        xhr.open('POST', 'http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idmenu=post')
         xhr.setRequestHeader("Content-Type", "application/json");
 
         //send the form data
@@ -128,7 +128,7 @@ if (filenameMenuUp == "menuchange.php") {
         let xhr = new XMLHttpRequest();
         let formData3 = new FormData(formMenuUp);
         //open the request
-        xhr.open('PUT', 'http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idmenu=put')
+        xhr.open('PUT', 'http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idmenu=put')
         xhr.setRequestHeader("Content-Type", "application/json");
 
         //send the form data
@@ -159,7 +159,7 @@ function chkDelMenu() {
 function deleteMenuItem(event) {
     //find id of the list iten
     let id = event.target.id;
-    url = "http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php";
+    url = "http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php";
     url2 = "menu.php"
     //send instruction to web service by FETCH
     //for method of "DELETE" i PHP/REST, by id
@@ -183,7 +183,7 @@ if (filenameReg == "register.php") {
         let xhr = new XMLHttpRequest();
         let formData = new FormData(formRegister);
         //open the request
-        xhr.open('POST', 'http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idregister=1')
+        xhr.open('POST', 'http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idregister=1')
         xhr.setRequestHeader("Content-Type", "application/json");
 
         //send the form data
@@ -213,7 +213,7 @@ function deleteUser(event) {
     //find id of the list iten
     let id2 = event.target.id;
 
-    url3 = "http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php";
+    url3 = "http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php";
     url4 = "register.php"
     //send instruction to web service by FETCH
     //for method of "DELETE" i PHP/REST, by id
@@ -245,7 +245,7 @@ function chkDelContact() {
 function deleteContactItem(event) {
     //find id of the list iten
     let id10 = event.target.id;
-    url7 = "http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php";
+    url7 = "http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php";
     url27 = "contact.php"
     //send instruction to web service by FETCH
     //for method of "DELETE" i PHP/REST, by id

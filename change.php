@@ -11,7 +11,7 @@ if(!isset($_COOKIE['User'])){
 //get id from URL
 if(isset($_GET['idorderno'])) {
     $id = $_GET['idorderno'];
-$details = json_decode(file_get_contents("http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorderno=$id"), true);
+$details = json_decode(file_get_contents("http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorderno=$id"), true);
 
 } 
 else {

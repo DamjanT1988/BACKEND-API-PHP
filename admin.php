@@ -27,7 +27,7 @@ if(isset($_POST['name'], $_POST['password'])) {
     
 
     //check if user exists & the password
-    if(file_get_contents("http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idusername=$name&idpassword=$password")) {
+    if(file_get_contents("http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idusername=$name&idpassword=$password")) {
         //print hello message if exits
         echo "<strong>Välkommen " . $name . "!</strong>";
         $_SESSION['inlogg'] = ""; 
@@ -116,7 +116,7 @@ if(!isset($_SESSION['inlogg'])) {
 <?php
 
 //get post & save - USE TRUE AS SECOND PARAMETER
-$postlist = json_decode(file_get_contents('http://localhost/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorder=orderall'), true);
+$postlist = json_decode(file_get_contents('http://studenter.miun.se/~dato1700/writeable/dt173g/project/projekt_webservice_vt22-DamjanT1988/webservice-API.php?idorder=orderall'), true);
 
 //ÄNDRA LÄNK INNAN INLÄMNING
 
