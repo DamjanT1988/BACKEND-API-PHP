@@ -3,8 +3,6 @@
 $page_title = "Logga in";
 include("includes/config.php");
 
-//include("includes/header.php");
-
 //check if logged in, go to admin directly
 if(!isset($_COOKIE['Bert'])) {
 //do nothing

@@ -38,16 +38,6 @@ body {
     border: solid 2px;
     text-decoration: none;
 }
-/*
-#mainmenu {
-    float: left;
-    font-size: 1.5em;
-    line-height: 1.5em;
-    min-width: 20%;
-    border: solid #eb0808;
-    border-width: 10px;
-    margin-right: 5%;
-}*/
 
 img {
     float: none;
@@ -63,18 +53,7 @@ img {
     position: relative;
     font-size: 0.95em;
 }
-/*
-.current {
-    border-bottom: solid 8px #4567cc;
-}
 
-div.postmain {
-    width: 750px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-*/
 
 /*LÄNKAR*/
 
@@ -107,27 +86,6 @@ hr {
     border-width: 6px;
     margin-top: 0%;
 }
-
-/*
-.bildprodukt-prodsida {
-    max-width: 330px;
-}
-
-
-.hide {
-    display: none;
-    color: white;
-}
-
-#maincontent {
-    float: none;
-    margin-left: 30%;
-    margin-bottom: 5%;
-    padding-bottom: 5%;
-    background-color: white;
-    max-width: 66%;
-}
-*/
 
 
 /*FORMULÄR*/
@@ -262,14 +220,6 @@ Textarea {
         border: solid 2px;
         text-decoration: none;
     }
-    /*
-    div.postmain {
-        width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }    
-*/
 
 
 /*FORM*/
@@ -279,10 +229,6 @@ form {
     font-weight: bold;
     width: 100%;
 }
-/*
-#todo {
-    font-size: 0.75em;
-}*/
 
 input {
     font-size: 1.4em;
