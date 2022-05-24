@@ -40,9 +40,9 @@ if(!isset($_COOKIE['User'])){
 <br>
 <input type="text" name="itemnamenew" id="itemnamenew">
 <br><br>
-<label type="pricenew">Pris per objekt (inkl. moms, i kr):</label>
+<label for="pricenew">Pris per objekt (inkl. moms, i kr):</label>
 <br>
-<input type="number" name="pricenew" id="pricenew" pattern="[0-9]">
+<input type="text" name="pricenew" id="pricenew" placeholder="Endast siffror">
 <br><br>
 <input type="submit" class="button2" value="Lägg in nytt menyobjekt!">
 <br>
@@ -63,11 +63,11 @@ foreach($postlist as $key=>$pl) {
     echo "<p><b>Objektnamn:</b> " . $pl['item_name'] . "</p>";
     echo "<p><b>Pris (inkl. moms):</b> " . $pl['price'] . " kr</p>";
     echo "<p><b>Skapad:</b> " . $pl['created'] . "</p>";
-    echo "<br><a class='button3'id='" . $pl['id'] . "'>RADERA</a>";
+    echo "<br><a class='button3' id='" . $pl['id'] . "'>RADERA</a>";
     echo "<a class='button2' href='menuchange.php?idmenuno=" . $pl['id'] . "'>ÄNDRA</a>" . "<br><br><hr>";
 }
 ?>
-
+</div></div>
 <?php
 include("includes/footer.php");
 ?>

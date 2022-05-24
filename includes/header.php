@@ -16,7 +16,7 @@ include("config.php");
     <div id="container">
     <a href="admin.php"><img src="pictures/logotyp.svg" id="logo" alt="logotyp"></a>
     <h1>ADMINSIDA!</h1>
-    <div><a class='button1' href='logout.php' class='logout'>Logga ut</a></div>
+    <div><a class='button1 logout' href='logout.php'>Logga ut</a></div>
     <div class="nav">
     <!--menu-->
     <a class="menynamn" href="start.php">START</a>

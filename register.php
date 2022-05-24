@@ -20,30 +20,23 @@ if($_COOKIE['User'] == 'Admin') {
 <!--create table-->
 <form name="formRegister" id="formRegister">
 
-<label for="name">Skriv in användarnamn:</label>
+<label for="namenew">Skriv in användarnamn:</label>
 <br>
-<input type="text" name="namenew" id="nameneww" placeholder="namn">
+<input type="text" name="namenew" id="namenew" placeholder="Namn">
 <br><br>
-<label for="password">Välj ett starkt lösenord:</label>
+<label for="passwordnew">Välj ett starkt lösenord:</label>
 <br>
-<input type="password" name="passwordnew" id="passwordnew" placeholder="lösenord">
+<input type="password" name="passwordnew" id="passwordnew" placeholder="Lösenord">
 <br><br>
 <label for="employeeno">Skriv in anställdes anställningsnummer:</label>
 <br>
-<input type="number" name="employeeno" id="employeeno" placeholder="endast siffror" pattern="[0-9]">
+<input type="text" name="employeeno" id="employeeno" placeholder="Endast siffror">
 
 <br><br>
 <input type="submit" class="button2" value="Registrera användarkonto">
 <br><br><br>
 </form>
 
-<?php
-//error if wrong login info.
-if(isset($_SESSION['errorlagring'])) {
-    echo $_SESSION['errorlagring'];
-    unset($_SESSION['errorlagring']);
-}
-?>
 
 <h3>Alla användare registrerade nedan: </h3>
 <?php
@@ -58,7 +51,7 @@ foreach($postlist as $key=>$pl) {
     echo "<p><b>Användarnamn:</b> ". $pl['username'] . "</p>";
     echo "<p><b>Anställningsnummer:</b> " . $pl['employeeno'] . "</p>";
     echo "<p><b>Skapad:</b> " . $pl['created'] . "</p>";
-    echo "<br><a class='button1'id='" . $pl['id'] . "'>RADERA</a>";
+    echo "<br><a class='button1' id='" . $pl['id'] . "'>RADERA</a>";
     echo "<br><br><hr>";
 }
 ?>

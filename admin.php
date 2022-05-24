@@ -54,67 +54,56 @@ if(!isset($_SESSION['inlogg'])) {
 <h2>Administrera order nedan!</h2>
 <h3>Lägg in en ny order:</h3>
 <p>Orderid skapas automatiskt. Alla nyskapade order får aktivstatus "active". För att söka bland order, tryck ctrl + F & skriv in sökord.</p>
-<?php
 
-//message if success or fail in adding post
-if(isset($_SESSION['lagring'])) {
-    echo $_SESSION['lagring'];
-    unset($_SESSION['lagring']);
-} 
-if(isset($_SESSION['errorlagring'])) {
-    echo $_SESSION['errorlagring'];
-    unset($_SESSION['errorlagring']);
-}
-?>
 
 <div id="wrapperform">
 <!--create table-->
 <form  name="formOrder" id="formOrder">
 
-<label for="type">Boka bord</label>
+<label for="typenew">Boka bord</label>
 
 <input type="radio" name="typenew" id="typenew" value="Table">
 <br>
 
-<label for="type"> Boka takeaway</label>
+<label for="typenew"> Boka takeaway</label>
 
 <input type="radio" name="typenew" value="Takeaway">
 <br><br>
 
-<label for="date">Vilket datum:</label>
+<label for="datenew">Vilket datum:</label>
 <br>
-<input type="date" name="datenew" id="datenew" placeholder="ÅÅÅÅ-MM-DD">
+<input type="date" name="datenew" id="datenew">
 <br><br>
-<label for="time">Vilken tid:</label>
+<label for="timenew">Vilken tid:</label>
 <br>
 <input type="time" name="timenew" id="timenew">
 <br><br>
-<label type="content">Orderinformation:</label>
+<label for="contentnew">Orderinformation:</label>
 <br>
 <textarea form="formOrder" name="contentnew" id="contentnew" rows="10" cols="45"></textarea>
 <br><br>
-<label for="pickuparrival">Äter på restaurang:</label>
+<label for="pickuparrivalnew">Äter på restaurang:</label>
 
 <input type="radio" name="pickuparrivalnew" id="pickuparrivalnew" value="Restaurangvistelse">
 <br>
-<label for="pickuparrival"> Hämtar på restaurang:</label>
+<label for="pickuparrivalnew"> Hämtar på restaurang:</label>
 
 <input type="radio" name="pickuparrivalnew" value="Hämtar">
 
 <br><br>
-<label type="cost">Totala orderkostnad (kr):</label>
+<label for="costnew">Totala orderkostnad (kr):</label>
 <br>
-<input type="number" name="costnew" id="costnew" pattern="[0-9]">
+<input type="text" name="costnew" id="costnew" placeholder="Endast siffror">
 <br><br>
-<label type="customername">Kundnamn:</label>
+<label for="customernamenew">Kundnamn:</label>
 <br>
 <input type="text" name="customernamenew" id="customernamenew">
 <br><br>
-<label type="customerphone">Kundtelefonnummer:</label>
+<label for="customerphonenew">Kundtelefonnummer:</label>
 <br>
-<input type="number" name="customerphonenew" id="customerphonenew" placeholder="Endast siffror" pattern="[0-9]">
+<input type="tel" name="customerphonenew" id="customerphonenew" placeholder="Endast siffror">
 <br><br>
-<label type="message">Meddelande från/om kunden:</label>
+<label for="messagenew">Meddelande från/om kunden:</label>
 <br>
 <input type="text" name="messagenew" id="messagenew">
 <br><br>
@@ -142,11 +131,12 @@ foreach($postlist as $key=>$pl) {
     echo "<p><b>Ankomsttyp: </b> " . $pl['pickup_arrival'] . "</p>";
     echo "<p><b>Status:</b> " . $pl['status'] . "</p>";
     echo "<p><b>Order lagd:</b> " . $pl['created'] . "</p>";
-    echo "<br><a class='button1'id='" . $pl['id'] . "'>RADERA</a>";
+    echo "<br><a class='button1' id='" . $pl['id'] . "'>RADERA</a>";
     echo "<a class='button2' href='change.php?idorderno=" . $pl['id'] . "'>ÄNDRA</a>" . "<br><br><hr>";
 }
 ?>
-
+</div>
+</div>
 <?php
 include("includes/footer.php");
 ?>
