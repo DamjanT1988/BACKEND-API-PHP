@@ -70,8 +70,8 @@ else {
 <br><br>
 <input type="submit" class="button2" value="Uppdatera order!">
 </form>
-<br><a href="admin.php" class='button1'id='<?= $details['id']; ?>'>RADERA ORDER</a>
-<br><br>
+
+<br><br><br>
 <div id="message"></div>
 <?php
 include("includes/footer.php");

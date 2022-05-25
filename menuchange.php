@@ -44,8 +44,7 @@ else {
 <br><br>
 <div id="message"></div>
 </form>
-<br><a href="menu.php" class='button3'id='<?= $details['id']; ?>'>RADERA MENUOBJEKT</a>
-<br><br> 
+<br> 
 
 <?php
 include("includes/footer.php");
