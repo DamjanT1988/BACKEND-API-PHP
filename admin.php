@@ -78,7 +78,7 @@ if(!isset($_SESSION['inlogg'])) {
 <br>
 <input type="time" name="timenew" id="timenew">
 <br><br>
-<label for="contentnew">Orderinformation:</label>
+<label for="contentnew">Orderinformation (bordsnummer med siffror endast) label>
 <br>
 <textarea form="formOrder" name="contentnew" id="contentnew" rows="10" cols="45"></textarea>
 <br><br>
