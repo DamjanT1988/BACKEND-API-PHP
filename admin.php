@@ -53,7 +53,7 @@ if(!isset($_SESSION['inlogg'])) {
 <br>
 <h2>Administrera order nedan!</h2>
 <h3>Lägg in en ny order:</h3>
-<p>Orderid skapas automatiskt. Alla nyskapade order får aktivstatus "active". För att söka bland order, tryck ctrl + F & skriv in sökord.</p>
+<p>Orderid skapas automatiskt. Alla nyskapade order får aktivstatus "active". För att söka bland order, tryck ctrl + F & skriv in sökord. Fyll i alla fält med tecken som siffror. Om tomt/inget, sätt X eller en siffra.</p>
 
 
 <div id="wrapperform">
