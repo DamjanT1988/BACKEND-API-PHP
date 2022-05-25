@@ -39,6 +39,11 @@ body {
     text-decoration: none;
 }
 
+#message {
+    font-size: 1.25em;
+    font-weight: bolder;
+}
+
 img {
     float: none;
     width: 12%;
