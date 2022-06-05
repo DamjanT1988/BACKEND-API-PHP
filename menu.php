@@ -33,7 +33,7 @@ if(!isset($_COOKIE['User'])){
 <input type="radio" name="menunamenew" value="drink">
 <br>
 <label for="menunamenew"> Övrigt: </label>
-<input type="radio" name="menunamenew" value="drink">
+<input type="radio" name="menunamenew" value="other">
 
 <br><br>
 <label for="itemnamenew">Namn på objekt:</label>
